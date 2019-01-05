@@ -1,8 +1,8 @@
-<div class="container-fluid py-3">
+<div class="container-fluid py-3 px-5">
     <div class="row">
         <?php foreach ($partners as $partner) : ?>
-        <div class="col-3">
-            <div class="card">
+        <div class="col-3 mb-4 card-group">
+            <div class="card border-secondary">
                 <img src="<?= $partner['image_path']; ?>" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title"><?= $partner['name']; ?></h5>

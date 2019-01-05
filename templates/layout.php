@@ -61,7 +61,7 @@
       <div class="col">
         <nav class="nav flex-column">
           <p class="text-muted">About ASP</p>
-          <a class="nav-link" href="/index.php#v-pills-documents">Documents</a>
+          <a class="nav-link" href="/documents.php">Documents</a>
           <a class="nav-link" href="/partners.php">Partners</a>
           <a class="nav-link" href="/members.php">Members</a>
           <a class="nav-link" href="index.php#team">Team</a>

@@ -2,3 +2,9 @@
 	background-image: url(../img/frontpage.gif);
 	background-size: cover;		
 }
+
+.scrollspy {
+	position: relative;
+	height: 560px;
+	overflow-y: scroll;
+}

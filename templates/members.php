@@ -1,4 +1,4 @@
-<div class="container-fluid py-3">
+<div class="container-fluid py-3  px-5">
     <div class="row">
         <?php foreach ($members as $member) : ?>
             <div class="col-3 mb-4 card-group">

@@ -61,6 +61,14 @@ $activities_navbar = [
 ];
 
 $members_navbar = [
+  [ 'title' => 'Provisions of membership',
+    'link' => '/documents.php#item-5',
+    'class' => 'nav-link js-scroll-trigger'
+  ],
+  [ 'title' => 'Members&#039; news',
+    'link' => 'news.php?cat=members',
+    'class' => 'nav-link js-scroll-trigger'
+  ],
   [ 'title' => 'Become a member',
     'link' => '/become_member.php',
     'class' => 'btn btn-success'
@@ -75,7 +83,11 @@ $partners_navbar = [
 ];
 
 $news_navbar = [
-  [ 'title' => 'Our news',
+  [ 'title' => 'All news',
+    'link' => '',
+    'class' => 'nav-link js-scroll-trigger'
+  ],
+  [ 'title' => 'Association&#039;s news',
     'link' => '',
     'class' => 'nav-link js-scroll-trigger'
   ],
