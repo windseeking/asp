@@ -8,3 +8,37 @@
 	height: 560px;
 	overflow-y: scroll;
 }
+
+.link-wrap {
+	word-wrap: break-word;
+}
+
+@media (max-width: 575.98px) {
+	.xs-hide {
+		display: none;
+	}
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+	.sm-hide {
+		display: none;
+	}
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+	.md-hide {
+		display: none;
+	}
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+	.lg-hide {
+		display: none;
+	}
+}
+
+@media (min-width: 1200px) {
+	.xl-hide {
+		display: none;
+	}
+}

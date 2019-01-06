@@ -1,7 +1,7 @@
-<div class="container-fluid py-3  px-5">
+<div class="container-fluid py-3 px-5">
     <div class="row">
         <?php foreach ($members as $member) : ?>
-            <div class="col-3 mb-4 card-group">
+            <div class="col-12 col-md-4 col-lg-3 mb-4 card-group">
                 <div class="card border-secondary">
                     <?php if (!empty($member['image_path']) ? $member['image_path'] : $member['image_path'] = 'https://www.woodfordoil.com/wp-content/uploads/2018/02/placeholder.jpg'); ?>
                     <img src="<?= $member['image_path']; ?>" class="card-img-top" alt="<?= $member['image_path']; ?>" style="max-height: 200px">

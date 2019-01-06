@@ -11,7 +11,63 @@
       <div class="col-12 mx-auto">
         <h2 class="text-center mb-4 display-4">About Suomi Partnership Association</h2>
 
-        <div class="row">
+        <!--Показывается на маленьких экранах-->
+        <div class="row mx-auto md-hide lg-hide xl-hide">
+          <div class="col-12">
+            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+              <li class="nav-item">
+                <a class="nav-link active" id="pills-general-tab" data-toggle="pill" href="#pills-general" role="tab" aria-controls="pills-general" aria-selected="true">General info</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="pills-mission-tab" data-toggle="pill" href="#pills-mission" role="tab" aria-controls="pills-mission" aria-selected="false">Mission $ vision</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="pills-management-tab" data-toggle="pill" href="#pills-management" role="tab" aria-controls="pills-management" aria-selected="false">Management</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="pills-documents-tab" data-toggle="pill" href="#pills-documents" role="tab" aria-controls="pills-documents" aria-selected="false">Documents</a>
+              </li>
+            </ul>
+            <div class="tab-content" id="pills-tabContent">
+              <div class="tab-pane fade show active" id="pills-general" role="tabpanel" aria-labelledby="pills-general-tab">
+                <ul>
+                  <li>Established in the year 2012 by Alexandr Sakara, who has been the general manager of Konecranes Ukraine JSC for 20 years.</li>
+                  <li>ASP is a non-profit association of businesses aimed at fostering cooperation between Ukrainian and Finnish companies.</li>
+                  <li>The establishment of ASP was supported by the Finnish Embassy in Ukraine.</li>
+                </ul>
+              </div>
+              <div class="tab-pane fade" id="pills-mission" role="tabpanel" aria-labelledby="pills-mission-tab">
+                <p>Our mission is to enhance cooperation between Ukrainian and Finnish businesses.</p>
+                <p>Our vision is:</p>
+                <ul>
+                  <li>To select Ukrainian companies which can be recommended as reliable partners for Finnish businesses after our verification process.</li>
+                  <li>To offer networking opportunities to Ukrainian and Finnish companies (arranging events, exchange of information etc.).</li>
+                  <li>Lobbying for interests of cooperation between Ukrainian and Finnish businesses.</li>
+                  <li>To support the projects of our members using ASP expertise.</li>
+                  <li>To offer promotion and advertising opportunities.</li>
+                </ul>
+              </div>
+              <div class="tab-pane fade" id="pills-management" role="tabpanel" aria-labelledby="pills-management-tab">
+                <p>Association management consists of the general assembly of the Association members, the Board and the executive director of the Association.</p>
+                <p>General Assembly or the Board may create specialized working bodies (commissions, committees, working groups etc.) and elect the president and a honorary president of the Association.</p>
+                <p>To control the executive bodies of the Association an audit committee may be formed.</p>
+              </div>
+              <div class="tab-pane fade" id="pills-documents" role="tabpanel" aria-labelledby="pills-documents-tab">
+                <ul>
+                  <li>Articles of Association</li>
+                  <li>Memorandum of Association</li>
+                  <li>ASP Presentation (3 min)</li>
+                  <li>Resolutions of the General Assembly 2013</li>
+                  <li>Board’s resolutions 2012</li>
+                  <li>Board’s resolutions 2013</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--Показывается на больших экранах-->
+        <div class="row xs-hide sm-hide">
           <div class="col-3">
             <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
               <a class="nav-link active" id="v-pills-general-tab" data-toggle="pill" href="#v-pills-general" role="tab" aria-controls="v-pills-home" aria-selected="true">General info</a>
@@ -49,7 +105,13 @@
                 <p>To control the executive bodies of the Association an audit committee may be formed.</p>
               </div>
 
-              <div class="tab-pane fade" id="v-pills-documents" role="tabpanel" aria-labelledby="v-pills-documents-tab">Documents</div>
+              <div class="tab-pane fade" id="v-pills-documents" role="tabpanel" aria-labelledby="v-pills-documents-tab">
+                <ul>
+                  <li>Doc1</li>
+                  <li>Doc2</li>
+                  <li>Doc3</li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
@@ -68,7 +130,7 @@
 
       <div class="container">
         <div class="row">
-          <div class="col-md-4">
+          <div class="col-md-4 col-sm-6">
             <div class="card mb-4 box-shadow">
               <img class="card-img-top" src="http://www.quintosubito.it/blog/wp-content/uploads/2017/11/leadverify@2x-300x192.png" alt="Thumbnail [100%x225]" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22348%22%20height%3D%22225%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20348%20225%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_1681d964f98%20text%20%7B%20fill%3A%23eceeef%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A17pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_1681d964f98%22%3E%3Crect%20width%3D%22348%22%20height%3D%22225%22%20fill%3D%22%2355595c%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22116.7265625%22%20y%3D%22120.3%22%3EThumbnail%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" data-holder-rendered="true" style="height: 225px; width: 100%; display: block;">
               <div class="card-body">
@@ -79,7 +141,7 @@
               </div>
             </div>
           </div>
-          <div class="col-md-4">
+          <div class="col-md-4 col-sm-6">
             <div class="card mb-4 box-shadow">
               <img class="card-img-top" src="http://www.xpress.co.in/wp-content/uploads/2018/07/networking.png" alt="Thumbnail [100%x225]" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22348%22%20height%3D%22225%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20348%20225%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_1681d964f98%20text%20%7B%20fill%3A%23eceeef%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A17pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_1681d964f98%22%3E%3Crect%20width%3D%22348%22%20height%3D%22225%22%20fill%3D%22%2355595c%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22116.7265625%22%20y%3D%22120.3%22%3EThumbnail%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" data-holder-rendered="true" style="height: 225px; width: 100%; display: block;">
               <div class="card-body">
@@ -90,7 +152,7 @@
               </div>
             </div>
           </div>
-          <div class="col-md-4">
+          <div class="col-md-4 col-sm-6">
             <div class="card mb-4 box-shadow">
               <img class="card-img-top" src="https://www.alivingmind.com/wp-content/themes/alivingmind/images/slider/s1.png" alt="Thumbnail [100%x225]" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22348%22%20height%3D%22225%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20348%20225%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_1681d964f9a%20text%20%7B%20fill%3A%23eceeef%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A17pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_1681d964f9a%22%3E%3Crect%20width%3D%22348%22%20height%3D%22225%22%20fill%3D%22%2355595c%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22116.7265625%22%20y%3D%22120.3%22%3EThumbnail%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" data-holder-rendered="true" style="height: 225px; width: 100%; display: block;">
               <div class="card-body">
@@ -102,7 +164,7 @@
             </div>
           </div>
 
-          <div class="col-md-4">
+          <div class="col-md-4 col-sm-6">
             <div class="card mb-4 box-shadow">
               <img class="card-img-top" src="https://solomono.net/r_imgs.php?thumb=img-1.png&w=280" alt="Thumbnail [100%x225]" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22348%22%20height%3D%22225%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20348%20225%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_1681d964f9b%20text%20%7B%20fill%3A%23eceeef%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A17pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_1681d964f9b%22%3E%3Crect%20width%3D%22348%22%20height%3D%22225%22%20fill%3D%22%2355595c%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22116.7265625%22%20y%3D%22120.3%22%3EThumbnail%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" data-holder-rendered="true" style="height: 225px; width: 100%; display: block;">
               <div class="card-body">
@@ -113,7 +175,7 @@
               </div>
             </div>
           </div>
-          <div class="col-md-4">
+          <div class="col-md-4 col-sm-6">
             <div class="card mb-4 box-shadow">
               <img class="card-img-top" src="https://smartlab.md/wp-content/uploads/2016/09/ssonlinepromo.png" alt="Thumbnail [100%x225]" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22348%22%20height%3D%22225%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20348%20225%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_1681d964f9e%20text%20%7B%20fill%3A%23eceeef%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A17pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_1681d964f9e%22%3E%3Crect%20width%3D%22348%22%20height%3D%22225%22%20fill%3D%22%2355595c%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22116.7265625%22%20y%3D%22120.3%22%3EThumbnail%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" data-holder-rendered="true" style="height: 225px; width: 100%; display: block;">
               <div class="card-body">
@@ -151,7 +213,7 @@
         <h3>Alexandr Sakara<br>
           <small>the chaiman of the Board</small>
         </h3>
-        <p><a href="mailto:alexandr.sakara@suomipartnership.org">alexandr.sakara@suomipartnership.org</a></p>
+        <p><a href="mailto:alexandr.sakara@suomipartnership.org" class="link-wrap">alexandr.sakara@suomipartnership.org</a></p>
         <p><a href="/uploads/CV-Alexandr-Sakara.pdf" target="_blank" class="btn btn-outline-primary">CV</a></p>
       </div>
 
@@ -169,7 +231,7 @@
         <h3>Ladymyr Bondar<br>
           <small>the secretary of the Board</small>
         </h3>
-        <p><a href="mailto:ladymyr.bondar@suomipartnership.org">ladymyr.bondar@suomipartnership.org</a></p>
+        <p><a href="mailto:ladymyr.bondar@suomipartnership.org"  class="link-wrap"  >ladymyr.bondar@suomipartnership.org</a></p>
         <p><a href="/uploads/CV-Ladymyr-Bondar.pdf" target="_blank" class="btn btn-outline-primary">CV</a></p>
       </div>
 
@@ -181,7 +243,7 @@
   <div class="container">
     <h2>Contact us</h2>
     <div class="row">
-      <div class="col-6">
+      <div class="col-sm-12 col-md-6">
         <form>
           <div class="form-group">
             <label for="name">Name <sup>*</sup></label>
@@ -202,7 +264,7 @@
         </form>
       </div>
 
-        <div class="col-2 ml-md-auto">
+        <div class="col-12 col-sm-6 col-md-2 mt-5 mt-md-0 ml-md-auto">
           <address>
             <strong>ASP Odesa</strong>
             <br>Uspens'ka str. 26, of. 10,
@@ -219,7 +281,7 @@
           </address>
         </div>
 
-        <div class="col-md-2 ml-md-auto">
+        <div class="col-12 col-sm-6 col-md-2 mt-5 mt-md-0 ml-md-auto">
           <address>
             <strong>ASP Zaporizhia</strong>
             <br>Kyoashka str. 16-a,

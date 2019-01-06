@@ -62,7 +62,7 @@ $activities_navbar = [
 
 $members_navbar = [
   [ 'title' => 'Provisions of membership',
-    'link' => '/documents.php#item-5',
+    'link' => '/documents.php#item-a-5',
     'class' => 'nav-link js-scroll-trigger'
   ],
   [ 'title' => 'Members&#039; news',
@@ -101,17 +101,20 @@ $news_navbar = [
   ]
 ];
 
-$partners = [
-  [ 'name' => 'Kuzminsky & Partners Law firm',
-    'logo' => '',
-    'desc' => '',
-    'path' => 'http://kuzminskypartners.com/'
+$documents_navbar = [
+  [ 'title' => 'Articles of Association',
+    'link' => '#articles',
+    'class' => 'nav-link js-scroll-trigger'
   ],
-  [ 'name' => 'Kuzminsky & Partners Law firm',
-    'logo' => '',
-    'desc' => '',
-    'path' => 'http://kuzminskypartners.com/'
+  [ 'title' => 'Memorandum of Association',
+    'link' => '#memo',
+    'class' => 'nav-link js-scroll-trigger'
+  ],
+  [ 'title' => 'Other documents',
+    'link' => '#other',
+    'class' => 'nav-link js-scroll-trigger'
   ]
 ];
+
 
 

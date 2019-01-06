@@ -26,24 +26,40 @@
 
 <body id="page-top">
 
-<nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark nav nav-pills">
-  <a class="navbar-brand" href="#">
-    <img src="../img/logo-r.png" width="30" class="d-inline-block align-top" alt="">
-    Suomi Partnership
-  </a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+<!--Показывается на экранах 768px и больше-->
+<nav class="navbar navbar-dark bg-dark fixed-top navbar-expand-lg nav nav-pills xs-hide sm-hide justify-content-between">
+    <a class="navbar-brand" href="#">
+      <img src="../img/logo-r.png" width="30" class="d-inline-block align-top" alt="">
+      Suomi Partnership
+    </a>
 
-    <?php foreach ($menu as $value): ?>
-      <a class="nav-item nav-link <?php echo ($title == $value['title']) ? 'active' : ''; ?>"
-         href="<?= $value['link']; ?>"><?= $value['title']; ?></a>
-    <?php endforeach; ?>
+      <?php foreach ($menu as $value): ?>
+        <a class="nav-item nav-link <?php echo ($title == $value['title']) ? 'active' : ''; ?>"
+           href="<?= $value['link']; ?>"><?= $value['title']; ?></a>
+      <?php endforeach; ?>
+  </div>
 
-    <?= $navbar; ?>
-
+  <?= $navbar; ?>
 </nav>
+
+
+<!--Показывается на экранах от 0 до 767px-->
+<div class="pos-f-t md-hide md-hide lg-hide xl-hide">
+  <div class="collapse" id="navbarToggleExternalContent">
+    <div class="bg-dark p-4">
+        <?php foreach ($menu as $value): ?>
+          <a class="nav-item nav-link <?php echo ($title == $value['title']) ? 'active' : ''; ?>"
+             href="<?= $value['link']; ?>"><?= $value['title']; ?></a>
+        <?php endforeach; ?>
+    </div>
+  </div>
+  <nav class="navbar navbar-dark bg-dark align-">
+      <?= $navbar; ?>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </nav>
+</div>
 
 <main><?= $content; ?></main>
 

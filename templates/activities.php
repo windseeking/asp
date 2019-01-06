@@ -1,11 +1,11 @@
 <section id="reliability">
   <div class="container px-5">
     <div class="row align-items-center justify-content-around">
-        <div class="col-6">
+        <div class="col-12 col-md-6 order-2 order-md-1 mt-4 mt-md-0">
           <p class="lead">We gather information about Ukrainian companies & verify their reliability for Finnish partners.</p>
         </div>
 
-      <div class="col-6">
+      <div class="col-12 col-md-6 order-1 order-md-2">
         <div class="card bg-light text-dark">
           <img src="http://www.quintosubito.it/blog/wp-content/uploads/2017/11/leadverify@2x-300x192.png" class="card-img" alt="...">
           <div class="card-img-overlay">
@@ -20,7 +20,7 @@
 <section id="networking" class="bg-light">
   <div class="container px-5">
     <div class="row align-items-center justify-content-around">
-      <div class="col-6">
+      <div class="col-12 col-md-6">
         <div class="card bg-dark text-white">
           <img src="http://www.xpress.co.in/wp-content/uploads/2018/07/networking.png" class="card-img" alt="...">
           <div class="card-img-overlay">
@@ -29,7 +29,7 @@
         </div>
       </div>
 
-      <div class="col-6">
+      <div class="col-12 col-md-6 mt-4 mt-md-0">
         <ul>
           <li>Informational support through this website.</li>
           <li>Newsletter about business opportunities in Ukraine and in Finland.</li>
@@ -46,7 +46,7 @@
 <section id="lobbying">
   <div class="container px-5">
     <div class="row align-items-center justify-content-around">
-      <div class="col-6">
+      <div class="col-12 col-md-6 order-2 order-md-1 mt-4 mt-md-0">
         <ul>
           <li>Representation of our members’ interests in political circles.</li>
           <li>Collective letters, requests, appeals.</li>
@@ -57,7 +57,7 @@
         </ul>
       </div>
 
-      <div class="col-6">
+      <div class="col-12 col-md-6 order-1 order-md-2">
         <div class="card bg-dark text-white">
           <img src="https://www.alivingmind.com/wp-content/themes/alivingmind/images/slider/s1.png" class="card-img" alt="...">
           <div class="card-img-overlay">
@@ -72,7 +72,7 @@
 <section id="support" class="bg-light">
   <div class="container px-5">
     <div class="row align-items-center justify-content-around">
-      <div class="col-6">
+      <div class="col-12 col-md-6">
         <div class="card bg-dark text-white">
           <img src="https://solomono.net/r_imgs.php?thumb=img-1.png&w=280" class="card-img" alt="...">
           <div class="card-img-overlay">
@@ -81,7 +81,7 @@
         </div>
       </div>
 
-      <div class="col-6">
+      <div class="col-12 col-md-6 mt-4 mt-md-0">
         <ul>
           <li>Informational support for projects of our members.</li>
           <li>Finding reliable partners for projects of our members.</li>
@@ -98,7 +98,7 @@
 <section id="promotion">
   <div class="container px-5">
     <div class="row align-items-center justify-content-around">
-      <div class="col-6">
+      <div class="col-12 col-md-6 order-2 order-md-1 mt-4 mt-md-0">
         <ul>
           <li>Advertising on the ASP website.</li>
           <li>Publication in the membership catalog.</li>
@@ -108,7 +108,7 @@
         </ul>
       </div>
 
-      <div class="col-6">
+      <div class="col-12 col-md-6 order-1 order-md-2">
         <div class="card bg-dark text-white">
           <img src="https://smartlab.md/wp-content/uploads/2016/09/ssonlinepromo.png" class="card-img" alt="...">
           <div class="card-img-overlay">
