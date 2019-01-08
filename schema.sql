@@ -10,6 +10,8 @@ CREATE TABLE IF NOT EXISTS `users`
   `email` char(255) NOT NULL UNIQUE KEY,
   `name` char(255) NOT NULL,
   `password` char(64) NOT NULL,
+  `lastname` char(64) NOT NULL,
+  `username` char(64) NOT NULL UNIQUE KEY,
   `is_admin` int DEFAULT 0,
   `created_at` timestamp default current_timestamp NOT NULL
 );

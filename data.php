@@ -116,5 +116,26 @@ $documents_navbar = [
   ]
 ];
 
+$register_navbar = [
+  [ 'title' => 'Log in',
+    'link' => '/login.php',
+    'class' => 'btn btn-success'
+  ]
+];
+
+$login_navbar = [
+  [ 'title' => 'Sign up',
+    'link' => '/register.php',
+    'class' => 'btn btn-success'
+  ]
+];
+
+$hello_navbar = [
+  [ 'title' => 'Log out',
+    'link' => 'logout.php',
+    'class' => 'btn btn-danger'
+  ]
+];
+
 
 

@@ -3,6 +3,8 @@
 require_once('functions.php');
 require_once ('data.php');
 
+session_start();
+
 $page_title = 'News';
 $page_desc = 'Association «Suomi Partnership» (ASP) is a non-profit and 
 non-governmental association of businesses aimed at fostering
@@ -15,7 +17,7 @@ $layout_content = include_template ('layout.php', [
   'desc' => $page_desc,
   'menu' => $menu,
   'navbar' => $page_navbar,
-  'content' => $page_content,
+  'content' => $page_content
 ]);
 
 print($layout_content);

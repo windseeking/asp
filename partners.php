@@ -7,6 +7,8 @@ require_once('functions.php');
 require_once('config.php');
 require_once ('data.php');
 
+session_start();
+
 $con = get_connection($database_config);
 $partners = get_partners($con);
 
@@ -22,7 +24,7 @@ $layout_content = include_template('layout.php', [
   'desc' => $page_desc,
   'menu' => $menu,
   'navbar' => $page_navbar,
-  'content' => $page_content,
+  'content' => $page_content
 ]);
 
 print($layout_content);

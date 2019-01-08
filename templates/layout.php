@@ -21,25 +21,30 @@
   <link href="../css/style.css" rel="stylesheet">
 
   <!--  Font Awesome icons-->
-  <script defer src="https://use.fontawesome.com/releases/v5.6.3/js/all.js" integrity="sha384-EIHISlAOj4zgYieurP0SdoiBYfGJKkgWedPHH4jCzpCXLmzVsw1ouK59MuUtP4a1" crossorigin="anonymous"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.6.3/js/all.js"
+          integrity="sha384-EIHISlAOj4zgYieurP0SdoiBYfGJKkgWedPHH4jCzpCXLmzVsw1ouK59MuUtP4a1"
+          crossorigin="anonymous"></script>
 </head>
 
 <body id="page-top">
 
 <!--Показывается на экранах 768px и больше-->
-<nav class="navbar navbar-dark bg-dark fixed-top navbar-expand-lg nav nav-pills xs-hide sm-hide justify-content-between">
-    <a class="navbar-brand" href="#">
-      <img src="../img/logo-r.png" width="30" class="d-inline-block align-top" alt="">
-      Suomi Partnership
-    </a>
+<nav class="navbar navbar-dark bg-dark fixed-top navbar-expand-lg nav nav-pills xs-hide sm-hide">
+  <a class="navbar-brand" href="#">
+    <img src="../img/logo-r.png" width="30" class="d-inline-block align-top" alt="">
+    Suomi Partnership
+  </a>
 
-      <?php foreach ($menu as $value): ?>
+    <?php if (!empty($menu)): ?>
+        <?php foreach ($menu as $value): ?>
         <a class="nav-item nav-link <?php echo ($title == $value['title']) ? 'active' : ''; ?>"
            href="<?= $value['link']; ?>"><?= $value['title']; ?></a>
-      <?php endforeach; ?>
-  </div>
+        <?php endforeach; ?>
+    <?php endif; ?>
 
-  <?= $navbar; ?>
+  <div class="navbar-expand container-fluid justify-content-end">
+      <?= $navbar; ?>
+  </div>
 </nav>
 
 
@@ -54,18 +59,22 @@
     </div>
   </div>
   <nav class="navbar navbar-dark bg-dark align-">
-      <?= $navbar; ?>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+    <div class="navbar-expand">
+        <?= $navbar; ?>
+    </div>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent"
+            aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
   </nav>
 </div>
 
-<main><?= $content; ?></main>
+<main><?=$content;?></main>
 
-<!-- Footer -->
 <footer class="py-5 px-2 bg-dark">
   <div class="container-fluid">
+
     <div class="row">
       <div class="col-6">
         <a href="/index.php#contact" class="btn btn-outline-primary">Contact us</a>
@@ -103,8 +112,10 @@
           <a class="nav-link" href="#">Finnish-Ukrainian news</a>
           <a class="nav-link" href="#">Useful links</a>
         </nav>
+        <?php if(!isset($_SESSION['user'])): ?>
+        <a class="text-muted" href="/login.php">Log in</a>
+        <?php endif; ?>
       </div>
-
     </div>
   </div>
   <!-- /.container -->
