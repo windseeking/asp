@@ -1,65 +1,34 @@
 <div class="container-fluid py-3 px-5">
-    <div class="card-columns">
-        <div class="card">
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Card title that wraps to a new line</h5>
-                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            </div>
-        </div>
-        <div class="card p-3">
-            <blockquote class="blockquote mb-0 card-body">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                <footer class="blockquote-footer">
-                    <small class="text-muted">
-                        Someone famous in <cite title="Source Title">Source Title</cite>
-                    </small>
-                </footer>
-            </blockquote>
-        </div>
-        <div class="card">
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Название карточки</h5>
-                <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-            </div>
-        </div>
-        <div class="card bg-primary text-white text-center p-3">
-            <blockquote class="blockquote mb-0">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat.</p>
-                <footer class="blockquote-footer text-white">
-                    <small>
-                        Someone famous in <cite title="Source Title">Source Title</cite>
-                    </small>
-                </footer>
-            </blockquote>
-        </div>
-        <div class="card text-center">
-            <div class="card-body">
-                <h5 class="card-title">Название карточки</h5>
-                <p class="card-text">This card has a regular title and short paragraphy of text below it.</p>
-                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-            </div>
-        </div>
-        <div class="card">
-            <img src="..." class="card-img-top" alt="...">
-        </div>
-        <div class="card p-3 text-right">
-            <blockquote class="blockquote mb-0">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                <footer class="blockquote-footer">
-                    <small class="text-muted">
-                        Someone famous in <cite title="Source Title">Source Title</cite>
-                    </small>
-                </footer>
-            </blockquote>
-        </div>
-        <div class="card">
-            <div class="card-body">
-                <h5 class="card-title">Название карточки</h5>
-                <p class="card-text">This is another card with title and supporting text below. This card has some additional content to make it slightly taller overall.</p>
-                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-            </div>
-        </div>
+  <?php if (isset($_SESSION['success'])): ?>
+    <div class="alert alert-success" role="alert">
+        <?= $_SESSION['success']; unset($_SESSION['success']); ?>
     </div>
+  <?php endif; ?>
+  <?php if (isset($_SESSION['errors'])): ?>
+    <div class="alert alert-danger" role="alert">
+        <?= $_SESSION['errors']; unset($_SESSION['errors']); ?>
+    </div>
+  <?php endif; ?>
+  <form class="form-inline justify-content-end mb-3">
+    <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+    <button class="btn btn-outline-success m-0 ml-2" type="submit">Search</button>
+  </form>
+
+  <div class="card-columns">
+      <?php foreach ($news as $item): ?>
+        <div class="card border-secondary ">
+            <?php if (!empty($item['image_path'])): ?>
+              <img src="<?= $item['image_path'] ?>" class="card-img-top" alt="<?= $item['title'] ?>">
+            <?php endif; ?>
+          <div class="card-body">
+            <p class="card-text text-muted">
+              <small><?= date('d.m.Y', strtotime($item['created_at'])) ?></small>
+            </p>
+            <h5 class="card-title"><?= $item['title'] ?></h5>
+            <p class="card-text"><?= $item['text'] ?></p>
+            <a href="#" class="badge badge-pill badge-primary"><?= isset($item['category']) ? $item['category'] : ''; ?></a>
+          </div>
+        </div>
+      <?php endforeach; ?>
+  </div>
+</div>

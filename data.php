@@ -137,5 +137,24 @@ $hello_navbar = [
   ]
 ];
 
+//$admin_tabs = [
+//  [ 'name' => 'news',
+//    'title' => 'News',
+/*    'var' => '<?=$tab_news;?>'*/
+//  ],
+//  [ 'name' => 'members',
+//    'title' => 'Members',
+/*    'var' => '<?=$tab_members;?>'*/
+//  ],
+//  [ 'name' => 'partners',
+//    'title' => 'Partners',
+/*    'var' => '<?=$tab_partners;?>'*/
+//  ],
+//  [ 'name' => 'account',
+//    'title' => 'My account',
+/*    'var' => '<?=$tab_account;?>'*/
+//  ]
+//];
+
 
 

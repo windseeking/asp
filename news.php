@@ -1,16 +1,22 @@
 <?php
 
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
 require_once('functions.php');
+require_once('config.php');
 require_once ('data.php');
 
 session_start();
 
+$con = get_connection($database_config);
+$news = get_news($con);
 $page_title = 'News';
 $page_desc = 'Association «Suomi Partnership» (ASP) is a non-profit and 
 non-governmental association of businesses aimed at fostering
 cooperation between Ukrainian and Finnish companies';
 $page_navbar = include_template('navbar.php', [ 'navbar' => $news_navbar ]);
-$page_content = include_template ('news.php', [ 'partners' => $partners ]);
+$page_content = include_template ('news.php', [ 'news' => $news ]);
 
 $layout_content = include_template ('layout.php', [
   'title' => $page_title,

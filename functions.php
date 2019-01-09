@@ -2,6 +2,25 @@
 
 require_once('mysql_helper.php');
 
+function add_news($con, array $news): bool {
+    $sql =
+      'INSERT INTO news (title, text, cat, image_path, created_at) 
+        VALUES (?, ?, ?, ?, NOW())';
+    $values = [
+      $news['title'] = ltrim($news['title']),
+      $news['text'],
+      $news['cat'],
+      $news['image_path']
+    ];
+    $stmt = db_get_prepare_stmt($con, $sql, $values);
+    mysqli_stmt_execute($stmt);
+
+    if (mysqli_error($con)) {
+        return false;
+    }
+    return true;
+};
+
 function add_user($con, array $user): bool {
     $sql =
       'INSERT INTO users (email, password, name, lastname, username, created_at) 
@@ -36,11 +55,18 @@ function get_connection(array $database_config) {
     return $con;
 };
 
-function get_members ($con): array {
+function get_members($con): array {
     $sql =
       'SELECT * FROM members';
     $res = mysqli_query($con, $sql);
     return $members = mysqli_fetch_all($res, MYSQLI_ASSOC);
+};
+
+function get_news($con): array {
+    $sql =
+      'SELECT * FROM news n ORDER BY created_at DESC';
+    $res = mysqli_query($con, $sql);
+    return $news = mysqli_fetch_all($res, MYSQLI_ASSOC);
 };
 
 function get_partners ($con): array {
@@ -68,7 +94,7 @@ function include_template($name, $data) {
 
 function is_email_exist($con, string $email): bool {
     $sql =
-      'SELECT * FROM users '.
+      'SELECT id FROM users '.
       'WHERE email = ?';
     $values = [$email];
     $user = db_fetch_data($con, $sql, $values);
@@ -78,9 +104,21 @@ function is_email_exist($con, string $email): bool {
     return false;
 };
 
+function is_news_exist($con, string $title): bool {
+    $sql =
+      'SELECT id FROM news '.
+      'WHERE title = ?';
+    $values = [$title];
+    $news = db_fetch_data($con, $sql, $values);
+    if (!empty($news)) {
+        return true;
+    }
+    return false;
+};
+
 function is_username_exist($con, $username): bool {
     $sql =
-      'SELECT * FROM users '.
+      'SELECT id FROM users '.
       'WHERE username = ?';
     $values = [$username];
     $user = db_fetch_data($con, $sql, $values);

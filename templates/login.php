@@ -53,7 +53,6 @@
           </div>
           <button class="btn btn-success btn-block" type="submit">Sign in</button>
         </form>
-        <p class="text-center mt-3"><a href="register.php">Forgot a password</a></p>
         <p class="text-center mt-3"><a href="register.php">Don't have an account? Click here to create</a></p>
       </div>
     </div>
