@@ -2,13 +2,34 @@
 
 require_once('mysql_helper.php');
 
+function add_member($con, array $member): bool {
+    $sql =
+      'INSERT INTO members (name, address, phone, email, activities, image_path, created_at) 
+        VALUES (?, ?, ?, ?, ?, ?, NOW())';
+    $values = [
+      $member['name'] = ltrim($member['name']),
+      $member['address'] = ltrim($member['address']),
+      $member['phone'] = ltrim($member['phone']),
+      $member['email'] = ltrim(strtolower($member['email'])),
+      $member['activities'] = ltrim($member['activities']),
+      $member['image_path']
+    ];
+    $stmt = db_get_prepare_stmt($con, $sql, $values);
+    mysqli_stmt_execute($stmt);
+
+    if (mysqli_error($con)) {
+        return false;
+    }
+    return true;
+};
+
 function add_news($con, array $news): bool {
     $sql =
       'INSERT INTO news (title, text, cat, image_path, created_at) 
         VALUES (?, ?, ?, ?, NOW())';
     $values = [
       $news['title'] = ltrim($news['title']),
-      $news['text'],
+      $news['text'] = ltrim($news['text']),
       $news['cat'],
       $news['image_path']
     ];
@@ -57,7 +78,7 @@ function get_connection(array $database_config) {
 
 function get_members($con): array {
     $sql =
-      'SELECT * FROM members';
+      'SELECT * FROM members ORDER BY created_at DESC';
     $res = mysqli_query($con, $sql);
     return $members = mysqli_fetch_all($res, MYSQLI_ASSOC);
 };
@@ -99,6 +120,18 @@ function is_email_exist($con, string $email): bool {
     $values = [$email];
     $user = db_fetch_data($con, $sql, $values);
     if (!empty($user)) {
+        return true;
+    }
+    return false;
+};
+
+function is_member_exist($con, string $name): bool {
+    $sql =
+      'SELECT id FROM members '.
+      'WHERE name = ?';
+    $values = [$name];
+    $member = db_fetch_data($con, $sql, $values);
+    if (!empty($member)) {
         return true;
     }
     return false;

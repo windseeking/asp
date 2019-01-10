@@ -70,10 +70,18 @@
   </nav>
 </div>
 
-<main><?=$content;?></main>
+<main><?= $content; ?></main>
 
 <footer class="py-5 px-2 bg-dark">
   <div class="container-fluid">
+      <?php if (isset($_SESSION['user'])): ?>
+        <div class="row container mb-3">
+          <span style="font-size: 1em; color: Dodgerblue;">
+            <i class="fas fa-user-tie mr-1"></i>
+          </span>
+          <a class="text-light" href="add_news.php"><?= $_SESSION['user']['username']; ?></a>
+        </div>
+      <?php endif; ?>
 
     <div class="row">
       <div class="col-6">
@@ -112,9 +120,9 @@
           <a class="nav-link" href="#">Finnish-Ukrainian news</a>
           <a class="nav-link" href="#">Useful links</a>
         </nav>
-        <?php if(!isset($_SESSION['user'])): ?>
-        <a class="text-muted" href="/login.php">Log in</a>
-        <?php endif; ?>
+          <?php if (!isset($_SESSION['user'])): ?>
+            <a class="text-muted" href="/login.php">Log in</a>
+          <?php endif; ?>
       </div>
     </div>
   </div>

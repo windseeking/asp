@@ -53,7 +53,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 if (isset($_SESSION['user'])) {
                     $user = $_SESSION['user'];
                     $page_navbar = $hello_navbar;
-                    header("Location: /login.php");
+                    header("Location: /add_news.php");
                 }
                 else {
                     $page_content = include_template('login.php', []);

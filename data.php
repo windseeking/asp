@@ -71,14 +71,14 @@ $members_navbar = [
   ],
   [ 'title' => 'Become a member',
     'link' => '/become_member.php',
-    'class' => 'btn btn-success'
+    'class' => 'btn btn-success ml-2'
   ]
 ];
 
 $partners_navbar = [
    [ 'title' => 'Become a partner',
     'link' => '/become_partner.php',
-    'class' => 'btn btn-success'
+    'class' => 'btn btn-success ml-2'
   ]
 ];
 
@@ -137,24 +137,24 @@ $hello_navbar = [
   ]
 ];
 
-//$admin_tabs = [
-//  [ 'name' => 'news',
-//    'title' => 'News',
-/*    'var' => '<?=$tab_news;?>'*/
-//  ],
-//  [ 'name' => 'members',
-//    'title' => 'Members',
-/*    'var' => '<?=$tab_members;?>'*/
-//  ],
-//  [ 'name' => 'partners',
-//    'title' => 'Partners',
-/*    'var' => '<?=$tab_partners;?>'*/
-//  ],
-//  [ 'name' => 'account',
-//    'title' => 'My account',
-/*    'var' => '<?=$tab_account;?>'*/
-//  ]
-//];
+$admin_tabs = [
+  [ 'name' => 'Add news',
+    'title' => 'News',
+    'link' => 'add_news.php'
+  ],
+  [ 'name' => 'Add member',
+    'title' => 'Members',
+    'link' => 'add_member.php'
+  ],
+  [ 'name' => 'Add partner',
+    'title' => 'Partners',
+    'link' => 'add_partner.php'
+  ],
+  [ 'name' => 'My account',
+    'title' => 'My account',
+    'link' => 'edit_account.php'
+  ]
+];
 
 
 

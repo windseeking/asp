@@ -26,6 +26,7 @@ CREATE TABLE IF NOT EXISTS `members`
   `activities` char(255) NOT NULL,
   `image_path` char(255) DEFAULT NULL,
   `website` char(255) DEFAULT NULL,
+  `created_at` timestamp default current_timestamp NOT NULL
   KEY members (name),
   KEY members (description)
 );
