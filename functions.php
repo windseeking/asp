@@ -42,6 +42,25 @@ function add_news($con, array $news): bool {
     return true;
 };
 
+function add_partner($con, array $partner): bool {
+    $sql =
+      'INSERT INTO partners (name, description, link, image_path, created_at) 
+        VALUES (?, ?, ?, ?, NOW())';
+    $values = [
+      $partner['name'] = ltrim($partner['name']),
+      $partner['description'] = ltrim($partner['description']),
+      $partner['link'] = ltrim($partner['link']),
+      $partner['image_path'],
+    ];
+    $stmt = db_get_prepare_stmt($con, $sql, $values);
+    mysqli_stmt_execute($stmt);
+
+    if (mysqli_error($con)) {
+        return false;
+    }
+    return true;
+};
+
 function add_user($con, array $user): bool {
     $sql =
       'INSERT INTO users (email, password, name, lastname, username, created_at) 
@@ -144,6 +163,18 @@ function is_news_exist($con, string $title): bool {
     $values = [$title];
     $news = db_fetch_data($con, $sql, $values);
     if (!empty($news)) {
+        return true;
+    }
+    return false;
+};
+
+function is_partner_exist($con, string $name): bool {
+    $sql =
+      'SELECT id FROM partners '.
+      'WHERE name = ?';
+    $values = [$name];
+    $partner = db_fetch_data($con, $sql, $values);
+    if (!empty($partner)) {
         return true;
     }
     return false;

@@ -17,25 +17,25 @@ if (!isset($_SESSION['user'])) {
 
 $user = $_SESSION['user'];
 $con = get_connection($database_config);
-$member = [];
+$partner = [];
 $errors = [];
 
-$page_title = 'Add member';
+$page_title = 'Add partner';
 $page_desc = 'Association «Suomi Partnership» (ASP) is a non-profit and 
 non-governmental association of businesses aimed at fostering
 cooperation between Ukrainian and Finnish companies';
 $page_navbar = include_template('navbar.php', ['navbar' => $hello_navbar]);
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $member = $_POST['member'];
-    $required = ['name', 'activities'];
+    $partner = $_POST['partner'];
+    $required = ['name', 'description'];
     foreach ($required as $item) {
-        if (empty($member[$item])) {
+        if (empty($partner[$item])) {
             $errors[$item] = 'Please, fill this field';
         }
     }
-    if (is_member_exist($con, $member['name'])) {
-        $errors['name'] = 'Member with this name already exists';
+    if (is_partner_exist($con, $partner['name'])) {
+        $errors['name'] = 'Partner with this name already exists';
     }
     if (!empty($_FILES['image_path']['name'])) {
         $file_info = finfo_open(FILEINFO_MIME_TYPE);
@@ -55,27 +55,27 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             } elseif ($file_type == 'image/png') {
                 $file_type = '.png';
             }
-            $member_name = implode('-', explode(' ', $member['name']));
-            $file_name = 'member' . '-' . $member_name . $file_type;
+            $partner_name = implode('-', explode(' ', $partner['name']));
+            $file_name = 'partner' . '-' . $partner_name . $file_type;
             move_uploaded_file($_FILES['image_path']['tmp_name'], 'img/' . $file_name);
-            $member['image_path'] = '/img/' . $file_name;
+            $partner['image_path'] = '/img/' . $file_name;
         }
     } else {
-        $member['image_path'] = null;
+        $partner['image_path'] = null;
     }
     if (empty($errors)) {
-        $is_added_member = add_member($con, $member);
-        if ($is_added_member) {
+        $is_added_partner = add_partner($con, $partner);
+        if ($is_added_partner) {
             $_SESSION['success'] = /** @lang text */
-              'Member added successfully!';
-            header('Location: members.php');
+              'Partner added successfully!';
+            header('Location: partners.php');
             die();
         }
-        $admin_content = include_template('add_member.php', ['member' => $member, 'errors' => $errors]);
+        $admin_content = include_template('add_partner.php', ['partner' => $partner, 'errors' => $errors]);
     }
-    $admin_content = include_template('add_member.php', ['member' => $member, 'errors' => $errors]);
+    $admin_content = include_template('add_partner.php', ['partner' => $partner, 'errors' => $errors]);
 }
-$admin_content = include_template('add_member.php', ['member' => $member, 'errors' => $errors]);
+$admin_content = include_template('add_partner.php', ['partner' => $partner, 'errors' => $errors]);
 
 $page_content = include_template('hello.php', [
   'content' => $admin_content,

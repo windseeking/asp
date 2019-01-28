@@ -23,6 +23,7 @@
         </select>
       </div>
 
+      <p class="mb-2">Image</p>
       <div class="custom-file mb-2 mb-md-0">
           <?php $class = isset($errors['image_path']) ? 'is-invalid' : ''; ?>
         <input type="file" class="custom-file-input <?= $class; ?>" id="image_path" name="image_path">
@@ -41,7 +42,7 @@
           <?php $class = isset($errors['text']) ? 'is-invalid' : '';
           $value = isset($news['text']) ? $news['text'] : ''; ?>
         <textarea class="form-control <?= $class; ?>" name="news[text]" id="text"
-                  rows="7"><?= filter_tags($value); ?></textarea>
+                  rows="8"><?= filter_tags($value); ?></textarea>
           <?php if (isset($errors['text'])): ?>
             <div class="invalid-feedback">
                 <?= $errors['text']; ?>
@@ -50,7 +51,7 @@
       </div>
     </div>
     <div class="col-12">
-      <button class="btn btn-outline-primary btn-block mt-3" type="submit" name="submit">Add news</button>
+      <button class="btn btn-outline-primary btn-block" type="submit" name="submit">Add news</button>
     </div>
   </div>
 </form>

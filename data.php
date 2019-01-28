@@ -1,9 +1,6 @@
 <?php
 
 $menu = [
-  [ 'title' => 'Home',
-    'link' => '../index.php'
-  ],
   [ 'title' => 'Activities',
     'link' => '../activities.php'
   ],

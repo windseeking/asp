@@ -4,7 +4,7 @@
       <label for="name">Name<sup> *</sup></label>
         <?php $class = isset($errors['name']) ? 'is-invalid' : '';
         $value = isset($member['name']) ? $member['name'] : ''; ?>
-      <input type="text" class="form-control <?= $class; ?>" id="name" name="member[name]" placeholder="Full name of this company"
+      <input type="text" class="form-control <?= $class; ?>" id="name" name="member[name]" placeholder="Full name of the company"
              value="<?= filter_tags($value); ?>">
         <?php if (isset($errors['name'])): ?>
           <div class="invalid-feedback">
@@ -99,6 +99,5 @@
         <?php endif; ?>
     </div>
   </div>
-
   <button class="btn btn-block btn-outline-primary" type="submit">Add member</button>
 </form>
