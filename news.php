@@ -11,18 +11,45 @@ session_start();
 
 $con = get_connection($database_config);
 $news = get_news($con);
+$cats = get_news_cats($con);
+
+
+if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+    $search = $_GET['search'] ?? '';
+    if ($search) {
+        $sql =
+            'SELECT * FROM news n '
+            . 'WHERE MATCH(title, text) AGAINST(?)';
+        $stmt = db_get_prepare_stmt($con, $sql, [$search]);
+        mysqli_stmt_execute($stmt);
+        $res = mysqli_stmt_get_result($stmt);
+        $news = mysqli_fetch_all($res, MYSQLI_ASSOC);
+    }
+}
+
+if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+    $apply = $_GET['cat'] ?? '';
+    if ($apply) {
+        $sql =
+            'SELECT * FROM news '
+            . 'WHERE cat = ?';
+        $stmt = db_get_prepare_stmt($con, $sql, [$apply]);
+        mysqli_stmt_execute($stmt);
+        $res = mysqli_stmt_get_result($stmt);
+        $news = mysqli_fetch_all($res, MYSQLI_ASSOC);
+    }
+}
+
 $page_title = 'News';
 $page_desc = 'Association «Suomi Partnership» (ASP) is a non-profit and 
 non-governmental association of businesses aimed at fostering
 cooperation between Ukrainian and Finnish companies';
-$page_navbar = include_template('navbar.php', [ 'navbar' => $news_navbar ]);
-$page_content = include_template ('news.php', [ 'news' => $news ]);
+$page_content = include_template ('news.php', [ 'news' => $news, 'cats' => $cats ]);
 
 $layout_content = include_template ('layout.php', [
   'title' => $page_title,
   'desc' => $page_desc,
   'menu' => $menu,
-  'navbar' => $page_navbar,
   'content' => $page_content
 ]);
 

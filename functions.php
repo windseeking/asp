@@ -109,6 +109,13 @@ function get_news($con): array {
     return $news = mysqli_fetch_all($res, MYSQLI_ASSOC);
 };
 
+function get_news_cats($con): array {
+    $sql =
+        'SELECT cat FROM news GROUP BY cat';
+    $res = mysqli_query($con, $sql);
+    return $cats = mysqli_fetch_all($res, MYSQLI_ASSOC);
+};
+
 function get_partners ($con): array {
     $sql =
       'SELECT * FROM partners';
@@ -131,6 +138,18 @@ function include_template($name, $data) {
    $result = ob_get_clean();
     return $result;
 };
+
+function is_admin($con, string $email): bool {
+    $sql =
+      'SELECT id FROM users '.
+      'WHERE is_admin = 1 AND email = ?';
+    $values = [$email];
+    $admin = db_fetch_data($con, $sql, $values);
+    if ($admin) {
+        return true;
+    }
+    return false;
+}
 
 function is_email_exist($con, string $email): bool {
     $sql =

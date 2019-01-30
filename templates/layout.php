@@ -42,9 +42,11 @@
         <?php endforeach; ?>
     <?php endif; ?>
 
-  <div class="navbar-expand container-fluid justify-content-end">
-      <?= $navbar; ?>
-  </div>
+    <?php if (isset($navbar)): ?>
+      <div class="navbar-expand container-fluid justify-content-end">
+          <?= $navbar; ?>
+      </div>
+    <?php endif; ?>
 </nav>
 
 
@@ -149,5 +151,7 @@
 
 <!-- Custom JavaScript for this theme -->
 <script src="js/scrolling-nav.js"></script>
+<!--My script-->
+<script src="js/script.js"></script>
 </body>
 </html>

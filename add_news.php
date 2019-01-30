@@ -5,9 +5,10 @@ ini_set('display_errors', 1);
 
 require_once('functions.php');
 require_once('config.php');
-require_once ('data.php');
+require_once('data.php');
 
 session_start();
+$con = get_connection($database_config);
 
 if (!isset($_SESSION['user'])) {
     $_SESSION['errors'] = 'Log in to view this page.';
@@ -16,7 +17,6 @@ if (!isset($_SESSION['user'])) {
 }
 
 $user = $_SESSION['user'];
-$con = get_connection($database_config);
 $news = [];
 $errors = [];
 
@@ -46,7 +46,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             if ($file_type !== 'image/png') {
                 $errors['image_path'] = 'File should be PNG or JPEG';
             }
-        } if ($file_size > 5242880) {
+        }
+        if ($file_size > 5242880) {
             $errors['image_path'] = 'Max size is 5Mb';
         } else {
             if ($file_type == 'image/jpeg') {

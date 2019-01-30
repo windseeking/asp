@@ -79,25 +79,6 @@ $partners_navbar = [
   ]
 ];
 
-$news_navbar = [
-  [ 'title' => 'All news',
-    'link' => '',
-    'class' => 'nav-link js-scroll-trigger'
-  ],
-  [ 'title' => 'Association&#039;s news',
-    'link' => '',
-    'class' => 'nav-link js-scroll-trigger'
-  ],
-  [ 'title' => 'Members&#039; news',
-    'link' => '',
-    'class' => 'nav-link js-scroll-trigger'
-  ],
-  [ 'title' => 'Finnish-Ukrainian news',
-    'link' => '',
-    'class' => 'nav-link js-scroll-trigger'
-  ]
-];
-
 $documents_navbar = [
   [ 'title' => 'Articles of Association',
     'link' => '#articles',

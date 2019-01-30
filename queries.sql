@@ -103,7 +103,7 @@ VALUES  (
         'In May 2017, the Association organized a visit of representatives of enterprises participating of the SPA to
         Reijola (Finland) on the Pekotek company. Ukrainian entrepreneurs had an opportunity to get acquainted with the
         technologies and management principles of one of the largest manufacturer of shot blasting and painting equipment.',
-        'finnish&ukrainian',
+        'finnish-ukrainian',
         'https://d34ip4tojxno3w.cloudfront.net/app/uploads/Finland_Husky_Ranch_Lapland-400x300.jpg'
         ),
         (
@@ -145,7 +145,7 @@ VALUES  (
         (
         'Hyvää joulua ja onnellista uutta vuotta!',
         'On behalf of Suomi Partnership Association we wish you Merry Christmas and Happy New Year!',
-        'finnish&ukrainian',
+        'finnish-ukrainian',
         'https://www.stickerforwall.com/29335-thickbox/stickers-merry-christmas-happy-new-year.jpg'
         ),
         (
@@ -159,7 +159,7 @@ VALUES  (
         'Suomi Partnership Association participates in humanitarian aid delivery',
         'During the difficult for Ukraine 2014 & 2015 years Suomi Partnership Association had been dealing with unusual
         activities as to original purpose of Association. We assisted in delivery of humanitarian aid from Finland to Ukraine.',
-        'finnish&ukrainian',
+        'finnish-ukrainian',
         ''
         );
 

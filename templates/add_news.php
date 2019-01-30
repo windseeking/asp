@@ -19,7 +19,7 @@
         <select class="form-control" id="cat" name="cat">
           <option value="asp">Association's news</option>
           <option value="members">Members' news</option>
-          <option value="finnish&ukrainian">Finnish-Ukrainian news</option>
+          <option value="finnish-ukrainian">Finnish-Ukrainian news</option>
         </select>
       </div>
 

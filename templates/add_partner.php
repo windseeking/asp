@@ -42,16 +42,16 @@
     </div>
 
     <div class="col-12 col-sm-6 mb-3">
-      <label for="description">Description<sup> *</sup></label>
-        <?php $class = isset($errors['']) ? 'is-invalid' : '';
-        $value = isset($partner['description']) ? $partner['description'] : ''; ?>
-      <textarea class="form-control <?= $class; ?>" id="description" name="partner[description]" rows="8"
-      ><?= filter_tags($value); ?></textarea>
-        <?php if (isset($errors['description'])): ?>
-          <div class="invalid-feedback">
-              <?= $errors['description']; ?>
-          </div>
-        <?php endif; ?>
+        <label for="description">Description<sup> *</sup></label>
+          <?php $class = isset($errors['description']) ? 'is-invalid' : '';
+          $value = isset($partner['description']) ? $partner['description'] : ''; ?>
+        <textarea class="form-control <?= $class; ?>" id="description" name="partner[description]" rows="8"
+        ><?= filter_tags($value); ?></textarea>
+          <?php if (isset($errors['description'])): ?>
+            <div class="invalid-feedback">
+                <?= $errors['description']; ?>
+            </div>
+          <?php endif; ?>
     </div>
   </div>
 

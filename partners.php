@@ -12,6 +12,19 @@ session_start();
 $con = get_connection($database_config);
 $partners = get_partners($con);
 
+if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+    $search = $_GET['search'] ?? '';
+    if ($search) {
+        $sql =
+            'SELECT * FROM partners p '
+            . 'WHERE MATCH(p.name, description) AGAINST(?)';
+        $stmt = db_get_prepare_stmt($con, $sql, [$search]);
+        mysqli_stmt_execute($stmt);
+        $res = mysqli_stmt_get_result($stmt);
+        $partners = mysqli_fetch_all($res, MYSQLI_ASSOC);
+    }
+}
+
 $page_title = 'Partners';
 $page_desc = 'Association «Suomi Partnership» (ASP) is a non-profit and 
 non-governmental association of businesses aimed at fostering
