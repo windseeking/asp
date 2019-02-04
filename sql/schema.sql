@@ -27,9 +27,7 @@ CREATE TABLE IF NOT EXISTS `members`
   `image_path` char(255) DEFAULT NULL,
   `website` char(255) DEFAULT NULL,
   `created_at` timestamp default current_timestamp NOT NULL,
-  `created_by` int unsigned DEFAULT NULL,
-  KEY members (name),
-  KEY members (activities)
+  `created_by` int unsigned DEFAULT NULL
 );
 
 CREATE TABLE IF NOT EXISTS `partners`
@@ -39,9 +37,7 @@ CREATE TABLE IF NOT EXISTS `partners`
   `description` varchar(1000) NOT NULL,
   `image_path` char(255) DEFAULT NULL,
   `link` char(255) DEFAULT NULL,
-  `created_by` int unsigned DEFAULT NULL,
-  KEY partners (name),
-  KEY partners (description)
+  `created_by` int unsigned DEFAULT NULL
 );
 
 CREATE TABLE IF NOT EXISTS `news`
@@ -53,14 +49,11 @@ CREATE TABLE IF NOT EXISTS `news`
   `image_path` char(255) DEFAULT NULL,
   `partner_id` int unsigned DEFAULT NULL,
   `created_by` int unsigned DEFAULT NULL,
-  `created_at` timestamp default current_timestamp NOT NULL,
-  KEY news (title),
-  KEY news_partner_id_fk (partner_id),
-  KEY news_user_id_fk (user_id),
+  `created_at` timestamp default current_timestamp NOT NULL
   CONSTRAINT news_partner_id_fk FOREIGN KEY (partner_id) REFERENCES partners (id),
-  CONSTRAINT news_user_id_fk FOREIGN KEY (user_id) REFERENCES users (id)
+  CONSTRAINT news_user_id_fk FOREIGN KEY (created_by) REFERENCES users (id)
 );
 
-CREATE FULLTEXT INDEX members_ft_search ON members(members.name, activities);
-CREATE FULLTEXT INDEX partners_ft_search ON partners(partners.name, description);
+CREATE FULLTEXT INDEX members_ft_search ON members(.name, activities);
+CREATE FULLTEXT INDEX partners_ft_search ON partners(name, description);
 CREATE FULLTEXT INDEX news_ft_search ON news(title, text);

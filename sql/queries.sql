@@ -143,7 +143,7 @@ VALUES  (
         'http://www.tuoficinaenvalladolid.com/wp/wp-content/uploads/2016/10/Euromachinery.jpg'
         ),
         (
-        'Hyvää joulua ja onnellista uutta vuotta!',
+        'Hyvää joulua aja onnellista uutta vuotta!',
         'On behalf of Suomi Partnership Association we wish you Merry Christmas and Happy New Year!',
         'finnish-ukrainian',
         'https://www.stickerforwall.com/29335-thickbox/stickers-merry-christmas-happy-new-year.jpg'

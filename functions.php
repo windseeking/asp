@@ -104,7 +104,7 @@ function get_members($con): array {
 
 function get_news($con): array {
     $sql =
-      'SELECT * FROM news n ORDER BY created_at DESC';
+      'SELECT * FROM news';
     $res = mysqli_query($con, $sql);
     return $news = mysqli_fetch_all($res, MYSQLI_ASSOC);
 };

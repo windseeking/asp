@@ -88,7 +88,7 @@
     <div class="row">
       <div class="col-6">
         <a href="/index.php#contact" class="btn btn-outline-primary">Contact us</a>
-        <a href="/become_partner.php" class="btn btn-outline-success">Become a partner</a>
+<!--        <a href="/become_partner.php" class="btn btn-outline-success">Become a partner</a>-->
         <a href="/become_member.php" class="btn btn-outline-success">Become a member</a>
         <p class="mt-3 text-muted">Copyright &copy; 2016 – 2019 Suomi Partnership Association. All rights reserved.</p>
       </div>
