@@ -30,98 +30,183 @@
 
 <div class="row bg-light">
   <div class="col-10 p-5 mx-auto">
-    <h2 class="text-center mb-3">Choose the most comfortable way to submit the request</h2>
-
-    <ul class="nav nav-pills nav-fill mb-3" id="pills-tab" role="tablist">
-      <li class="nav-item">
-        <a class="nav-link active" id="pills-online-tab" data-toggle="pill" href="#pills-online" role="tab"
-           aria-controls="pills-online" aria-selected="true">Online</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" id="pills-offline-tab" data-toggle="pill" href="#pills-offline" role="tab"
-           aria-controls="pills-offline" aria-selected="false">Offline</a>
-      </li>
-    </ul>
-
-    <div class="tab-content" id="pills-tab">
-      <div class="tab-pane fade show active" id="pills-online" role="tabpanel" aria-labelledby="pills-online-tab">
-        <form method="post">
-          <div class="form-group">
-            <label for="name">Full name of the company</label>
-            <input type="text" class="form-control" id="name">
-          </div>
-
-          <div class="form-row">
-            <div class="form-group col-md-6">
-              <label for="trade_number">Trade register number</label>
-              <input type="text" class="form-control" id="trade_number">
+    <h2 class="text-center mb-3">Fill the form below to submit the membership request</h2>
+    <form method="post" action="/functions/send.php">
+      <div class="form-group">
+          <?php $class = isset($membership_request['name']) ? 'is-invalid' : '';
+          $value = isset($membership_request['name']) ? $membership_request['name'] : ''; ?>
+        <label for="name">Full name of the company</label>
+        <input type="text" class="form-control <?= $class; ?>" id="name" name="membership_request[name]"
+               value="<?= filter_tags($value); ?>">
+          <?php if (isset($errors['name'])): ?>
+            <div class="invalid-feedback">
+                <?= $errors['name']; ?>
             </div>
-            <div class="form-group col-md-6">
-              <label for="business_ID">Y-tunnus (Business ID)</label>
-              <input type="text" class="form-control" id="business_ID">
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label for="official_address">Official address</label>
-            <input type="text" class="form-control" id="official_address"
-                   placeholder="438 Dark Spurt, San Francisco, CA 94528, US">
-          </div>
-
-          <div class="form-group">
-            <label for="postal_address">Postal address</label>
-            <input type="text" class="form-control" id="postal_address"
-                   placeholder="438 Dark Spurt, San Francisco, CA 94528, US">
-          </div>
-
-          <div class="form-row">
-            <div class="form-group col-md-2">
-              <label for="phone">Phone number</label>
-              <input type="text" class="form-control" id="phone" placeholder="+38 000 000 00 00">
-            </div>
-            <div class="form-group col-md-2">
-              <label for="fax">Fax</label>
-              <input type="text" class="form-control" id="fax" placeholder="Fax">
-            </div>
-            <div class="form-group col-md-2">
-              <label for="website">Website</label>
-              <input type="email" class="form-control" id="website">
-            </div>
-            <div class="form-group col-md-6">
-              <label for="email">Email</label>
-              <input type="email" class="form-control" id="email"
-                     placeholder="For participation in general assemblies and communication with ASP">
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label for="banking">Banking details</label>
-            <textarea class="form-control" id="banking"></textarea>
-          </div>
-
-          <div class="form-row">
-            <div class="form-group col-md-6">
-              <label for="signors">Names of the authorized signors</label>
-              <textarea class="form-control" id="signors"></textarea>
-            </div>
-            <div class="form-group col-md-6">
-              <label for="contact_person">Name of the contact person</label>
-              <textarea class="form-control" id="contact_person"
-                        placeholder="Name of the contact person to communicate with ASP and to represent the member in the general assembly of the ASP"></textarea>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label for="description">Branch of industry and product description</label>
-            <textarea class="form-control" id="description"></textarea>
-          </div>
-
-          <button type="submit" class="btn btn-block btn-outline-primary">Submit</button>
-        </form>
+          <?php endif; ?>
       </div>
 
-      <div class="tab-pane fade" id="pills-offline" role="tabpanel" aria-labelledby="pills-offline-tab">...</div>
-    </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+            <?php $class = isset($membership_request['trade_number']) ? 'is-invalid' : '';
+            $value = isset($membership_request['trade_number']) ? $membership_request['trade_number'] : ''; ?>
+          <label for="trade_number">Trade register number</label>
+          <input type="text" class="form-control <?= $class; ?>" id="trade_number"
+                 name="membership_request[trade_number]" value="<?= filter_tags($value); ?>">
+            <?php if (isset($errors['trade_number'])): ?>
+              <div class="invalid-feedback">
+                  <?= $errors['trade_number']; ?>
+              </div>
+            <?php endif; ?>
+        </div>
+        <div class="form-group col-md-6">
+            <?php $class = isset($membership_request['business_ID']) ? 'is-invalid' : '';
+            $value = isset($membership_request['business_ID']) ? $membership_request['business_ID'] : ''; ?>
+          <label for="business_ID">Y-tunnus (Business ID)</label>
+          <input type="text" class="form-control <?= $class; ?>" id="business_ID" name="membership_request[business_ID]"
+                 value="<?= filter_tags($value); ?>">
+            <?php if (isset($errors['business_ID'])): ?>
+              <div class="invalid-feedback">
+                  <?= $errors['business_ID']; ?>
+              </div>
+            <?php endif; ?>
+        </div>
+      </div>
 
+      <div class="form-group">
+          <?php $class = isset($membership_request['official_address']) ? 'is-invalid' : '';
+          $value = isset($membership_request['official_address']) ? $membership_request['official_address'] : ''; ?>
+        <label for="official_address">Official address</label>
+        <input type="text" class="form-control <?= $class; ?>" id="official_address"
+               name="membership_request[official_address]" value="<?= filter_tags($value); ?>"
+               placeholder="438 Dark Spurt, San Francisco, CA 94528, US">
+          <?php if (isset($errors['official_address'])): ?>
+            <div class="invalid-feedback">
+                <?= $errors['official_address']; ?>
+            </div>
+          <?php endif; ?>
+      </div>
+
+      <div class="form-group">
+          <?php $class = isset($membership_request['postal_address']) ? 'is-invalid' : '';
+          $value = isset($membership_request['postal_address']) ? $membership_request['postal_address'] : ''; ?>
+        <label for="postal_address">Postal address</label>
+        <input type="text" class="form-control <?= $class; ?>" id="postal_address"
+               name="membership_request[postal_address]" value="<?= filter_tags($value); ?>"
+               placeholder="438 Dark Spurt, San Francisco, CA 94528, US">
+          <?php if (isset($errors['postal_address'])): ?>
+            <div class="invalid-feedback">
+                <?= $errors['postal_address']; ?>
+            </div>
+          <?php endif; ?>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group col-md-2">
+            <?php $class = isset($membership_request['phone']) ? 'is-invalid' : '';
+            $value = isset($membership_request['phone']) ? $membership_request['phone'] : ''; ?>
+          <label for="phone">Phone number</label>
+          <input type="text" class="form-control <?= $class; ?>" id="phone" placeholder="+38 000 000 00 00"
+                 name="membership_request[phone]" value="<?= filter_tags($value); ?>">
+            <?php if (isset($errors['phone'])): ?>
+              <div class="invalid-feedback">
+                  <?= $errors['phone']; ?>
+              </div>
+            <?php endif; ?>
+        </div>
+        <div class="form-group col-md-2">
+            <?php $class = isset($membership_request['fax']) ? 'is-invalid' : '';
+            $value = isset($membership_request['fax']) ? $membership_request['fax'] : ''; ?>
+          <label for="fax">Fax</label>
+          <input type="text" class="form-control <?= $class; ?>" id="fax" name="membership_request[fax]"
+                 value="<?= filter_tags($value); ?>" placeholder="Fax">
+            <?php if (isset($errors['fax'])): ?>
+              <div class="invalid-feedback">
+                  <?= $errors['fax']; ?>
+              </div>
+            <?php endif; ?>
+        </div>
+        <div class="form-group col-md-2">
+            <?php $class = isset($membership_request['website']) ? 'is-invalid' : '';
+            $value = isset($membership_request['website']) ? $membership_request['website'] : ''; ?>
+          <label for="website">Website</label>
+          <input type="email" class="form-control <?= $class; ?>" id="website" name="website"
+                 value="<?= filter_tags($value); ?>">
+            <?php if (isset($errors['website'])): ?>
+              <div class="invalid-feedback">
+                  <?= $errors['website']; ?>
+              </div>
+            <?php endif; ?>
+        </div>
+        <div class="form-group col-md-6">
+            <?php $class = isset($membership_request['email']) ? 'is-invalid' : '';
+            $value = isset($membership_request['email']) ? $membership_request['email'] : ''; ?>
+          <label for="email">Email</label>
+          <input type="email" class="form-control <?= $class; ?>" id="email" name="membership_request[email]"
+                 value="<?= filter_tags($value); ?>"
+                 placeholder="For participation in general assemblies and communication with ASP">
+            <?php if (isset($errors['email'])): ?>
+              <div class="invalid-feedback">
+                  <?= $errors['email']; ?>
+              </div>
+            <?php endif; ?>
+        </div>
+      </div>
+
+      <div class="form-group">
+          <?php $class = isset($membership_request['banking']) ? 'is-invalid' : '';
+          $value = isset($membership_request['banking']) ? $membership_request['banking'] : ''; ?>
+        <label for="banking">Banking details</label>
+        <textarea class="form-control <?= $class; ?>" id="banking"
+                  name="membership_request[banking]"><?= filter_tags($value); ?></textarea>
+          <?php if (isset($errors['banking'])): ?>
+            <div class="invalid-feedback">
+                <?= $errors['banking']; ?>
+            </div>
+          <?php endif; ?>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group col-md-6">
+            <?php $class = isset($membership_request['signors']) ? 'is-invalid' : '';
+            $value = isset($membership_request['signors']) ? $membership_request['signors'] : ''; ?>
+          <label for="signors">Names of the authorized signors</label>
+          <textarea class="form-control <?= $class; ?>" id="signors"
+                    name="membership_request[signors]"><?= filter_tags($value); ?></textarea>
+            <?php if (isset($errors['signors'])): ?>
+              <div class="invalid-feedback">
+                  <?= $errors['signors']; ?>
+              </div>
+            <?php endif; ?>
+        </div>
+        <div class="form-group col-md-6">
+            <?php $class = isset($membership_request['contact_person']) ? 'is-invalid' : '';
+            $value = isset($membership_request['contact_person']) ? $membership_request['contact_person'] : ''; ?>
+          <label for="contact_person">Name of the contact person</label>
+          <textarea class="form-control <?= $class; ?>" id="contact_person" name="membership_request[contact_person]"
+                    placeholder="Name of the contact person to communicate with ASP and to represent the member in the general assembly of the ASP"><?= filter_tags($value); ?></textarea>
+            <?php if (isset($errors['contact_person'])): ?>
+              <div class="invalid-feedback">
+                  <?= $errors['contact_person']; ?>
+              </div>
+            <?php endif; ?>
+        </div>
+      </div>
+
+      <div class="form-group">
+          <?php $class = isset($membership_request['description']) ? 'is-invalid' : '';
+          $value = isset($membership_request['description']) ? $membership_request['description'] : ''; ?>
+        <label for="description">Branch of industry and product description</label>
+        <textarea class="form-control <?= $class; ?>" id="description"
+                  name="membership_request[description]"><?= filter_tags($value); ?></textarea>
+          <?php if (isset($errors['description'])): ?>
+            <div class="invalid-feedback">
+                <?= $errors['description']; ?>
+            </div>
+          <?php endif; ?>
+      </div>
+
+      <button type="submit" class="btn btn-block btn-outline-primary">Submit</button>
+    </form>
   </div>
+</div>
 </div>
