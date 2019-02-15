@@ -31,9 +31,9 @@
 <div class="row bg-light">
   <div class="col-10 p-5 mx-auto">
     <h2 class="text-center mb-3">Fill the form below to submit the membership request</h2>
-    <form method="post" action="/functions/send.php">
+    <form method="post">
       <div class="form-group">
-          <?php $class = isset($membership_request['name']) ? 'is-invalid' : '';
+          <?php $class = isset($errors['name']) ? 'is-invalid' : '';
           $value = isset($membership_request['name']) ? $membership_request['name'] : ''; ?>
         <label for="name">Full name of the company</label>
         <input type="text" class="form-control <?= $class; ?>" id="name" name="membership_request[name]"
@@ -47,7 +47,7 @@
 
       <div class="form-row">
         <div class="form-group col-md-6">
-            <?php $class = isset($membership_request['trade_number']) ? 'is-invalid' : '';
+            <?php $class = isset($errors['trade_number']) ? 'is-invalid' : '';
             $value = isset($membership_request['trade_number']) ? $membership_request['trade_number'] : ''; ?>
           <label for="trade_number">Trade register number</label>
           <input type="text" class="form-control <?= $class; ?>" id="trade_number"
@@ -59,7 +59,7 @@
             <?php endif; ?>
         </div>
         <div class="form-group col-md-6">
-            <?php $class = isset($membership_request['business_ID']) ? 'is-invalid' : '';
+            <?php $class = isset($errors['business_ID']) ? 'is-invalid' : '';
             $value = isset($membership_request['business_ID']) ? $membership_request['business_ID'] : ''; ?>
           <label for="business_ID">Y-tunnus (Business ID)</label>
           <input type="text" class="form-control <?= $class; ?>" id="business_ID" name="membership_request[business_ID]"
@@ -73,7 +73,7 @@
       </div>
 
       <div class="form-group">
-          <?php $class = isset($membership_request['official_address']) ? 'is-invalid' : '';
+          <?php $class = isset($errors['official_address']) ? 'is-invalid' : '';
           $value = isset($membership_request['official_address']) ? $membership_request['official_address'] : ''; ?>
         <label for="official_address">Official address</label>
         <input type="text" class="form-control <?= $class; ?>" id="official_address"
@@ -87,7 +87,7 @@
       </div>
 
       <div class="form-group">
-          <?php $class = isset($membership_request['postal_address']) ? 'is-invalid' : '';
+          <?php $class = isset($errors['postal_address']) ? 'is-invalid' : '';
           $value = isset($membership_request['postal_address']) ? $membership_request['postal_address'] : ''; ?>
         <label for="postal_address">Postal address</label>
         <input type="text" class="form-control <?= $class; ?>" id="postal_address"
@@ -100,9 +100,9 @@
           <?php endif; ?>
       </div>
 
-      <div class="form-row">
+      <div class="form-row" id="form">
         <div class="form-group col-md-2">
-            <?php $class = isset($membership_request['phone']) ? 'is-invalid' : '';
+            <?php $class = isset($errors['phone']) ? 'is-invalid' : '';
             $value = isset($membership_request['phone']) ? $membership_request['phone'] : ''; ?>
           <label for="phone">Phone number</label>
           <input type="text" class="form-control <?= $class; ?>" id="phone" placeholder="+38 000 000 00 00"
@@ -114,7 +114,7 @@
             <?php endif; ?>
         </div>
         <div class="form-group col-md-2">
-            <?php $class = isset($membership_request['fax']) ? 'is-invalid' : '';
+            <?php $class = isset($errors['fax']) ? 'is-invalid' : '';
             $value = isset($membership_request['fax']) ? $membership_request['fax'] : ''; ?>
           <label for="fax">Fax</label>
           <input type="text" class="form-control <?= $class; ?>" id="fax" name="membership_request[fax]"
@@ -126,10 +126,10 @@
             <?php endif; ?>
         </div>
         <div class="form-group col-md-2">
-            <?php $class = isset($membership_request['website']) ? 'is-invalid' : '';
+            <?php $class = isset($errors['website']) ? 'is-invalid' : '';
             $value = isset($membership_request['website']) ? $membership_request['website'] : ''; ?>
           <label for="website">Website</label>
-          <input type="email" class="form-control <?= $class; ?>" id="website" name="website"
+          <input type="text" class="form-control <?= $class; ?>" id="website" name="membership_request[website]"
                  value="<?= filter_tags($value); ?>">
             <?php if (isset($errors['website'])): ?>
               <div class="invalid-feedback">
@@ -138,7 +138,7 @@
             <?php endif; ?>
         </div>
         <div class="form-group col-md-6">
-            <?php $class = isset($membership_request['email']) ? 'is-invalid' : '';
+            <?php $class = isset($errors['email']) ? 'is-invalid' : '';
             $value = isset($membership_request['email']) ? $membership_request['email'] : ''; ?>
           <label for="email">Email</label>
           <input type="email" class="form-control <?= $class; ?>" id="email" name="membership_request[email]"
@@ -153,7 +153,7 @@
       </div>
 
       <div class="form-group">
-          <?php $class = isset($membership_request['banking']) ? 'is-invalid' : '';
+          <?php $class = isset($errors['banking']) ? 'is-invalid' : '';
           $value = isset($membership_request['banking']) ? $membership_request['banking'] : ''; ?>
         <label for="banking">Banking details</label>
         <textarea class="form-control <?= $class; ?>" id="banking"
@@ -167,7 +167,7 @@
 
       <div class="form-row">
         <div class="form-group col-md-6">
-            <?php $class = isset($membership_request['signors']) ? 'is-invalid' : '';
+            <?php $class = isset($errors['signors']) ? 'is-invalid' : '';
             $value = isset($membership_request['signors']) ? $membership_request['signors'] : ''; ?>
           <label for="signors">Names of the authorized signors</label>
           <textarea class="form-control <?= $class; ?>" id="signors"
@@ -179,7 +179,7 @@
             <?php endif; ?>
         </div>
         <div class="form-group col-md-6">
-            <?php $class = isset($membership_request['contact_person']) ? 'is-invalid' : '';
+            <?php $class = isset($errors['contact_person']) ? 'is-invalid' : '';
             $value = isset($membership_request['contact_person']) ? $membership_request['contact_person'] : ''; ?>
           <label for="contact_person">Name of the contact person</label>
           <textarea class="form-control <?= $class; ?>" id="contact_person" name="membership_request[contact_person]"
@@ -193,7 +193,7 @@
       </div>
 
       <div class="form-group">
-          <?php $class = isset($membership_request['description']) ? 'is-invalid' : '';
+          <?php $class = isset($errors['description']) ? 'is-invalid' : '';
           $value = isset($membership_request['description']) ? $membership_request['description'] : ''; ?>
         <label for="description">Branch of industry and product description</label>
         <textarea class="form-control <?= $class; ?>" id="description"
@@ -206,6 +206,19 @@
       </div>
 
       <button type="submit" class="btn btn-block btn-outline-primary">Submit</button>
+        <?php if (isset($_SESSION['success'])): ?>
+            <div class="alert alert-success mt-3" role="alert">
+                <?= $_SESSION['success'];
+                unset($_SESSION['success']); ?>
+            </div>
+        <?php endif; ?>
+
+        <?php if (isset($_SESSION['errors'])): ?>
+            <div class="alert alert-danger mt-3" role="alert">
+                <?= $_SESSION['errors'];
+                unset($_SESSION['errors']); ?>
+            </div>
+        <?php endif; ?>
     </form>
   </div>
 </div>

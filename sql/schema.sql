@@ -4,6 +4,8 @@ CREATE DATABASE IF NOT EXISTS asp
 
 USE asp;
 
+set foreign_key_checks = 0;
+
 CREATE TABLE IF NOT EXISTS `users`
 (
   `id` int unsigned NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -50,10 +52,13 @@ CREATE TABLE IF NOT EXISTS `news`
   `partner_id` int unsigned DEFAULT NULL,
   `created_by` int unsigned DEFAULT NULL,
   `created_at` timestamp default current_timestamp NOT NULL
+  KEY news_titlle (title),
+  KEY news_partner_id_fk (partner_id),
+  KEY news_user_ud_fk (creadted_by),
   CONSTRAINT news_partner_id_fk FOREIGN KEY (partner_id) REFERENCES partners (id),
   CONSTRAINT news_user_id_fk FOREIGN KEY (created_by) REFERENCES users (id)
 );
 
-CREATE FULLTEXT INDEX members_ft_search ON members(.name, activities);
+CREATE FULLTEXT INDEX members_ft_search ON members(name, activities);
 CREATE FULLTEXT INDEX partners_ft_search ON partners(name, description);
 CREATE FULLTEXT INDEX news_ft_search ON news(title, text);
