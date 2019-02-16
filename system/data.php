@@ -2,16 +2,16 @@
 
 $menu = [
   [ 'title' => 'Activities',
-    'link' => '../activities.php'
+    'link' => '../activities'
   ],
   [ 'title' => 'Partners',
-    'link' => '../partners.php'
+    'link' => '../partners'
   ],
   [ 'title' => 'Members',
-    'link' => '../members.php'
+    'link' => '../members'
   ],
   [ 'title' => 'News',
-    'link' => '../news.php'
+    'link' => '../news'
   ]
 ];
 
@@ -59,22 +59,22 @@ $activities_navbar = [
 
 $members_navbar = [
   [ 'title' => 'Provisions of membership',
-    'link' => '/documents.php#item-a-5',
+    'link' => '/documents#item-a-5',
     'class' => 'nav-link js-scroll-trigger'
   ],
   [ 'title' => 'Members&#039; news',
-    'link' => 'news.php?cat=members',
+    'link' => 'news?cat=members',
     'class' => 'nav-link js-scroll-trigger'
   ],
   [ 'title' => 'Become a member',
-    'link' => '/become_member.php',
+    'link' => '/become-member',
     'class' => 'btn btn-success ml-2'
   ]
 ];
 
 $partners_navbar = [
    [ 'title' => 'Become a partner',
-    'link' => '/become_partner.php',
+    'link' => '/become-partner',
     'class' => 'btn btn-success ml-2'
   ]
 ];
@@ -96,21 +96,21 @@ $documents_navbar = [
 
 $register_navbar = [
   [ 'title' => 'Log in',
-    'link' => '/login.php',
+    'link' => '/login',
     'class' => 'btn btn-success'
   ]
 ];
 
 $login_navbar = [
   [ 'title' => 'Sign up',
-    'link' => '/register.php',
+    'link' => '/register',
     'class' => 'btn btn-success'
   ]
 ];
 
-$hello_navbar = [
+$admin_navbar = [
   [ 'title' => 'Log out',
-    'link' => 'logout.php',
+    'link' => 'logout',
     'class' => 'btn btn-danger'
   ]
 ];
@@ -118,19 +118,19 @@ $hello_navbar = [
 $admin_tabs = [
   [ 'name' => 'Add news',
     'title' => 'News',
-    'link' => 'add_news.php'
+    'link' => 'add-news'
   ],
   [ 'name' => 'Add member',
     'title' => 'Members',
-    'link' => 'add_member.php'
+    'link' => 'add-member'
   ],
   [ 'name' => 'Add partner',
     'title' => 'Partners',
-    'link' => 'add_partner.php'
+    'link' => 'add-partner'
   ],
   [ 'name' => 'My account',
     'title' => 'My account',
-    'link' => 'edit_account.php'
+    'link' => 'account'
   ]
 ];
 

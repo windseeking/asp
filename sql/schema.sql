@@ -51,10 +51,10 @@ CREATE TABLE IF NOT EXISTS `news`
   `image_path` char(255) DEFAULT NULL,
   `partner_id` int unsigned DEFAULT NULL,
   `created_by` int unsigned DEFAULT NULL,
-  `created_at` timestamp default current_timestamp NOT NULL
+  `created_at` timestamp default current_timestamp NOT NULL,
   KEY news_titlle (title),
   KEY news_partner_id_fk (partner_id),
-  KEY news_user_ud_fk (creadted_by),
+  KEY news_user_ud_fk (created_by),
   CONSTRAINT news_partner_id_fk FOREIGN KEY (partner_id) REFERENCES partners (id),
   CONSTRAINT news_user_id_fk FOREIGN KEY (created_by) REFERENCES users (id)
 );

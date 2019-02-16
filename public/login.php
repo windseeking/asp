@@ -9,7 +9,7 @@ require_once('../system/config.php');
 
 session_start();
 if (isset($_SESSION['user'])) {
-    header("Location: hello.php");
+    header("Location: add-news.php");
     exit();
 };
 
@@ -53,7 +53,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 if (isset($_SESSION['user'])) {
                     $user = $_SESSION['user'];
                     $page_navbar = $hello_navbar;
-                    header("Location: /add_news.php");
+                    header("Location: /add-news.php");
                 }
                 else {
                     $page_content = include_template('login.php', []);

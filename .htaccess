@@ -8,3 +8,6 @@ DirectoryIndex public/index.php
 
 RewriteCond  %{DOCUMENT_ROOT}/public/$1 -f
 RewriteRule ^(.*)$ public/$1 [L,QSA]
+
+RewriteCond %{REQUEST_URI} ^/admin
+RewriteRule ^(.*)$ /admin/add-news [R=301,L]
