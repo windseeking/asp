@@ -7,7 +7,7 @@
 
       <div class="col-12 col-md-6 order-1 order-md-2">
         <div class="card bg-light text-dark">
-          <img src="http://www.quintosubito.it/blog/wp-content/uploads/2017/11/leadverify@2x-300x192.png" class="card-img" alt="...">
+          <img src="../img/reliability.png" class="card-img" alt="">
           <div class="card-img-overlay">
             <h2 class="card-title">Reliability verification</h2>
           </div>
@@ -22,7 +22,7 @@
     <div class="row align-items-center justify-content-around">
       <div class="col-12 col-md-6">
         <div class="card bg-dark text-white">
-          <img src="http://www.xpress.co.in/wp-content/uploads/2018/07/networking.png" class="card-img" alt="...">
+          <img src="../img/networking.png" class="card-img" alt="">
           <div class="card-img-overlay">
             <h2 class="card-title"><span class="bg-dark">Networking</span></h2>
           </div>
@@ -59,7 +59,7 @@
 
       <div class="col-12 col-md-6 order-1 order-md-2">
         <div class="card bg-dark text-white">
-          <img src="https://www.alivingmind.com/wp-content/themes/alivingmind/images/slider/s1.png" class="card-img" alt="...">
+          <img src="../img/lobbying.png" class="card-img" alt="">
           <div class="card-img-overlay">
             <h2 class="card-title"><span class="bg-dark">Lobbying</span></h2>
           </div>
@@ -74,7 +74,7 @@
     <div class="row align-items-center justify-content-around">
       <div class="col-12 col-md-6">
         <div class="card bg-dark text-white">
-          <img src="https://solomono.net/r_imgs.php?thumb=img-1.png&w=280" class="card-img" alt="...">
+          <img src="../img/support.png" class="card-img" alt="">
           <div class="card-img-overlay">
             <h2 class="card-title"><span class="bg-dark">Support for projects</span></h2>
           </div>
@@ -110,7 +110,7 @@
 
       <div class="col-12 col-md-6 order-1 order-md-2">
         <div class="card bg-dark text-white">
-          <img src="https://smartlab.md/wp-content/uploads/2016/09/ssonlinepromo.png" class="card-img" alt="...">
+          <img src="../img/promotion.png" class="card-img" alt="">
           <div class="card-img-overlay">
             <h2 class="card-title"><span class="bg-dark">Promotion</span></h2>
           </div>
