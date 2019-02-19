@@ -52,7 +52,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $_SESSION['user'] = $user;
                 if (isset($_SESSION['user'])) {
                     $user = $_SESSION['user'];
-                    $page_navbar = $hello_navbar;
                     header("Location: /add-news.php");
                 }
                 else {
@@ -75,7 +74,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 $layout_content = include_template('layout.php', [
   'content' => $page_content,
   'title' => $page_title,
-  'navbar' => $page_navbar,
   'menu' => $menu
 ]);
 

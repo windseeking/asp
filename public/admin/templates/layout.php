@@ -30,7 +30,7 @@
 
 <!--Показывается на экранах 768px и больше-->
 <nav class="navbar navbar-dark bg-dark fixed-top navbar-expand-lg nav nav-pills xs-hide sm-hide">
-  <a class="navbar-brand" href="index">
+  <a class="navbar-brand" href="../index">
     <img src="../img/logo-r.png" width="30" class="d-inline-block align-top" alt="">
     Suomi Partnership
   </a>

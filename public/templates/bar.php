@@ -44,7 +44,7 @@
     </div>
   <?php endif; ?>
 
-    <div class="col-12 col-md-3">
+    <div class="col-12 col-md-3 pr-md-0">
         <form method="get" class="form-inline justify-content-end">
             <input class="form-control" name="search" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success ml-2 xs-hide sm-hide md-hide" type="submit">Search</button>

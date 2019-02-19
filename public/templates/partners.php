@@ -1,4 +1,4 @@
-<div class="container-fluid py-3 px-5">
+<div class="container-fluid p-3 px-md-5">
 
     <?php require('bar.php');?>
 

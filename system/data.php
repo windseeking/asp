@@ -73,10 +73,7 @@ $members_navbar = [
 ];
 
 $partners_navbar = [
-   [ 'title' => 'Become a partner',
-    'link' => '/become-partner',
-    'class' => 'btn btn-success ml-2'
-  ]
+
 ];
 
 $documents_navbar = [

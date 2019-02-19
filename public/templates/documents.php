@@ -4,13 +4,13 @@
     });
 </script>
 <section id="articles" class="py-2">
-  <div class="container-fluid px-5 py-3" style="position: relative">
+  <div class="container-fluid p-3 px-md-5" style="position: relative">
     <div class="row">
       <div class="col-12">
         <h1 class="mb-4">ARTICLES OF ASSOCIATION</h1>
         <div class="row" id="scroll" data-spy="scroll">
           <div class="col-12 col-md-4">
-            <nav id="scrollspy" class="navbar navbar-light bg-light">
+            <nav id="scrollspy" class="navbar navbar-light bg-light mb-3 mb-md-0">
               <nav class="nav nav-pills flex-column">
                 <a class="nav-link" href="#item-a-1">1. GENERAL PROVISIONS</a>
                 <a class="nav-link" href="#item-a-2">2. LEGAL STATUS OF THE ASSOCIATION</a>
@@ -657,13 +657,13 @@
 </section>
 
 <section id="memo" class="bg-light py-2">
-  <div class="container-fluid px-5 py-3" style="position: relative">
+  <div class="container-fluid p-3 px-md-5" style="position: relative">
     <div class="row">
       <div class="col-12">
         <h1 class="mb-4">MEMORANDUM OF ASSOCIATION SUOMI PARTNERSHIP</h1>
         <div class="row" id="scroll">
           <div class="col-12 col-md-4">
-            <nav id="navbar-example3" class="navbar navbar-light bg-white">
+            <nav id="navbar-example3" class="navbar navbar-light bg-white mb-3 mb-md-0">
               <nav class="nav nav-pills flex-column">
                 <a class="nav-link" href="#item-b-1">1. SUBJECT OF THE MEMORANDUM</a>
                 <a class="nav-link" href="#item-b-2">2. THE ARTICLES OF ASSOCIATION</a>
@@ -832,9 +832,8 @@
 </section>
 
 <section id="other" class="py-2">
-  <div class="container-fluid px-5 py-3" style="position: relative">
+  <div class="container-fluid p-3 px-md-5" style="position: relative">
     <h1 class="mb-4">Other documents</h1>
-    <div class="row">
       <div class="card-columns">
         <div class="card">
           <ul class="list-group list-group-flush">
@@ -916,6 +915,5 @@
                 Partnership</a></li>
           </ul>
         </div>
-      </div>
     </div>
 </section>

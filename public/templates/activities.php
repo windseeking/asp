@@ -1,5 +1,5 @@
 <section id="reliability">
-  <div class="container px-5">
+  <div class="container px-3 px-md-5">
     <div class="row align-items-center justify-content-around">
         <div class="col-12 col-md-6 order-2 order-md-1 mt-4 mt-md-0">
           <p class="lead">We gather information about Ukrainian companies & verify their reliability for Finnish partners.</p>
@@ -18,7 +18,7 @@
 </section>
 
 <section id="networking" class="bg-light">
-  <div class="container px-5">
+  <div class="container px-3 px-md-5">
     <div class="row align-items-center justify-content-around">
       <div class="col-12 col-md-6">
         <div class="card bg-dark text-white">
@@ -44,7 +44,7 @@
 </section>
 
 <section id="lobbying">
-  <div class="container px-5">
+  <div class="container px-3 px-md-5">
     <div class="row align-items-center justify-content-around">
       <div class="col-12 col-md-6 order-2 order-md-1 mt-4 mt-md-0">
         <ul>
@@ -70,7 +70,7 @@
 </section>
 
 <section id="support" class="bg-light">
-  <div class="container px-5">
+  <div class="container px-3 px-md-5">
     <div class="row align-items-center justify-content-around">
       <div class="col-12 col-md-6">
         <div class="card bg-dark text-white">
@@ -96,7 +96,7 @@
 </section>
 
 <section id="promotion">
-  <div class="container px-5">
+  <div class="container px-3 px-md-5">
     <div class="row align-items-center justify-content-around">
       <div class="col-12 col-md-6 order-2 order-md-1 mt-4 mt-md-0">
         <ul>

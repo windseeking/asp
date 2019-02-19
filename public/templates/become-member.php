@@ -1,5 +1,5 @@
 <div class="container-fluid">
-  <div class="col-10 p-5 mx-auto">
+  <div class="col-11 p-3 p-md-5 mx-auto">
     <h1 class="display-4 text-center">Advantages of being member of the Association</h1>
     <div class="row mt-5">
       <div class="col-12 col-sm-4 text-center">
@@ -29,7 +29,7 @@
 </div>
 
 <div class="row bg-light">
-  <div class="col-10 p-5 mx-auto">
+  <div class="col-10 p-3 p-md-5 mx-auto">
     <h2 class="text-center mb-3">Fill the form below to submit the membership request</h2>
     <form method="post">
       <div class="form-group">
