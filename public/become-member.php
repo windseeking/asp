@@ -13,6 +13,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $membership_request = $_POST['membership_request'];
     $required = [
         'name',
+        'email',
+        'company_name',
         'trade_number',
         'business_ID',
         'official_address',
@@ -20,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         'phone',
         'fax',
         'website',
-        'email',
+        'company_email',
         'banking',
         'signors',
         'contact_person',
@@ -36,45 +38,52 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $errors['email'] = 'Enter a valid email';
         }
     }
+
     if (empty($errors)) {
-        $name = $membership_request['name'];
-        $trade_number = $membership_request['trade_number'];
-        $business_ID = $membership_request['business_ID'];
-        $official_address = $membership_request['official_address'];
-        $postal_address = $membership_request['postal_address'];
-        $phone = $membership_request['phone'];
-        $fax = $membership_request['fax'];
-        $website = $membership_request['website'];
-        $email = $membership_request['email'];
-        $banking = $membership_request['banking'];
-        $signors = $membership_request['signors'];
-        $contact_person = $membership_request['contact_person'];
-        $description = $membership_request['description'];
-        if (mail("windseeking2@gmail.com", "ASP membership request",
-            "Full name of the company: " . $name .
-            "Trade register number: " . $trade_number .
-            "Y-tunnus (Business ID): " . $business_ID .
-            "Official address: " . $official_address .
-            "Postal address: " . $postal_address .
-            "Phone: " . $phone .
-            "Fax: " . $fax .
-            "Website: " . $website .
-            "Email: " . $email .
-            "Banking details: " . $banking .
-            "Names of the authorized signors: " . $signors .
-            "Name of the contact person: " . $contact_person .
-            "Branch of industry and product description: " . $description,
-            "From: no-reply@asp.ua \r\n")) {
-            $_SESSION['success'] = 'The form was sent.';
-            header('Location: become-member#form');
-            die();
+        $transport = (new Swift_SmtpTransport('host',
+            port))// сюда необходимо вставить данные (хост и порт) вашего сервера исходящей почты SMTP (информация должна находиться на сайте хостинга)
+        ->setUsername('username')// указан в вашем почтовом менеджере на хостинге (скорее всего это будет один из email-адресов)
+        ->setPassword('password'); // указан в вашем почтовом менеджере на хостинге
+        $mailer = new Swift_Mailer($transport);
+
+        $message = (new Swift_Message('Запрос на вступление в Ассоциацию'))// тема письма, задается произвольно
+        ->setFrom(['email' => 'Suomi Partnership Association'])// вставьте email, указанный в вашем почтовом менеджере на хостинге (должен совпадать с логином), имя задается произвольно
+        ->setTo(['email' => 'name']); // email-адрес, куда вы хотите получать письма, и имя (произвольное, будет отображаться в графе "Кому")
+
+        $message_content = include_template('membership-request-email.php', [
+            'contact_name' => filter_tags($membership_request['name']),
+            'contact_email' => filter_tags($membership_request['email']),
+            'company_name' => filter_tags($membership_request['company_name']),
+            'trade_number' => filter_tags($membership_request['trade_number']),
+            'business_ID' => filter_tags($membership_request['business_ID']),
+            'official_address' => filter_tags($membership_request['official_address']),
+            'postal_address' => filter_tags($membership_request['postal_address']),
+            'phone' => filter_tags($membership_request['phone']),
+            'fax' => filter_tags($membership_request['fax']),
+            'website' => filter_tags($membership_request['website']),
+            'company_email' => filter_tags($membership_request['company_email']),
+            'banking' => filter_tags($membership_request['banking']),
+            'signors' => filter_tags($membership_request['signors']),
+            'contact_person' => filter_tags($membership_request['contact_person']),
+            'description' => filter_tags($membership_request['description'])
+        ]);
+
+        $message->setBody($message_content, 'text/html');
+
+        try {
+            $result = $mailer->send($message);
+        } catch (Swift_TransportException $ex) {
+            print($ex->getMessage() . '<br>');
         }
-        $_SESSION['error'] = 'The form was not sent. Please contact us.';
-        header('Location: become-member#form');
-        die();
+
+        if (!$result) {
+            $_SESSION['errors'] = 'The message was not sent. Please, try again or contact us via <a href="mailto:innovationfund@onu.edu.ua">email</a> or <a href="tel:+380995250511">phone</a>.';
+        } else {
+            $_SESSION['success'] = 'The message was sent successfully!';
+        }
+    } else {
+        $_SESSION['errors'] = 'Please, correct errors in the form.';
     }
-    $page_content = include_template('become-member.php',
-        ['errors' => $errors, 'membership_request' => $membership_request]);
 }
 $page_content = include_template('become-member.php', [
     'errors' => $errors,

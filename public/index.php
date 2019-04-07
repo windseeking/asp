@@ -39,10 +39,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             ->setFrom(['email' => 'Suomi Partnership Association']) // вставьте email, указанный в вашем почтовом менеджере на хостинге, имя задается произвольно
             ->setTo(['email' => 'имя']); // email-адрес, куда вы хотите получать письма, и имя (произвольное, будет отображаться в графе "Кому")
 
-        $message_content = include_template('email.php', [
-            'message' => $contact['message'],
-            'send_name' => $contact['name'],
-            'email' => $contact['email']
+        $message_content = include_template('contact-email.php', [
+            'message' => filter_tags($contact['message']),
+            'contact_name' => filter_tags($contact['name']),
+            'contact_email' => filter_tags($contact['email'])
         ]);
 
         $message->setBody($message_content, 'text/html');
@@ -62,7 +62,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $_SESSION['errors'] = 'Please, correct errors in the form.';
     }
 }
-$page_content = include_template('index.php', ['errors' => $errors, 'contact' => $contact]);
+$page_content = include_template('index.php', [
+    'errors' => $errors,
+    'contact' => $contact]);
 
 $layout_content = include_template('layout.php', [
     'title' => $page_title,
