@@ -78,25 +78,26 @@
 
 <main><?= $content; ?></main>
 
-<footer class="py-3 px-2 bg-dark">
+<footer class="px-3 py-4 bg-dark">
     <div class="container-fluid">
-        <?php if (isset($_SESSION['user'])): ?>
             <div class="row">
                 <div class="col">
                     <a href="/index#contact" class="btn btn-outline-primary">Contact us</a>
                     <a href="/become-member" class="btn btn-outline-success">Become a member</a>
                 </div>
+
+                <?php if (isset($_SESSION['user'])): ?>
                 <div class="col text-right">
                   <span style="font-size: 1em; color: Dodgerblue;">
                     <i class="fas fa-user-tie mr-1"></i>
                   </span>
                     <a class="text-light" href="admin"><?= $_SESSION['user']['username']; ?></a>
                 </div>
+                <?php endif; ?>
             </div>
-        <?php endif; ?>
 
         <div class="row">
-            <div class="col-12 col-lg-4 text-center text-lg-left">
+            <div class="col-12 col-lg-6 text-center text-lg-left">
                 <p class="mt-3 text-muted">Copyright &copy; 2016 – 2019 Suomi Partnership Association. All rights
                     reserved.</p>
             </div>
