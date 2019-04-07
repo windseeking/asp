@@ -1,13 +1,7 @@
 <?php
 
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+require_once('../init.php');
 
-require_once('../functions/functions.php');
-require_once ('../system/data.php');
-require_once('../system/config.php');
-
-session_start();
 $errors = [];
 $contact = [];
 
@@ -15,7 +9,7 @@ $page_title = 'Home';
 $page_desc = 'Association «Suomi Partnership» (ASP) is a non-profit and 
 non-governmental association of businesses aimed at fostering
 cooperation between Ukrainian and Finnish companies';
-$page_navbar = include_template('navbar.php', [ 'navbar' => $index_navbar ]);
+$page_navbar = include_template('navbar.php', ['navbar' => $index_navbar]);
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $contact = $_POST['contact'];
@@ -34,33 +28,48 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $errors['email'] = 'Enter a valid email';
         }
     }
+
     if (empty($errors)) {
-        $name = $contact['name'];
-        $email = $contact['email'];
-        $message = $contact['message'];
-        if (mail("windseeking2@gmail.com", "ASP membership request",
-            "From: " . $name .
-            "Email: " . $email .
-            "Message: " . $message,
-            "From: no-reply@asp.ua \r\n")) {
-            $_SESSION['success'] = 'The form was sent.';
-            header('Location: index#contact');
-            die();
+        $transport = (new Swift_SmtpTransport('host', port))  // сюда необходимо вставить данные (хост и порт) вашего сервера исходящей почты SMTP (информация должна находиться на сайте хостинга)
+            ->setUsername('username') // указан в вашем почтовом менеджере на хостинге (скорее всего это будет один из email-адресов)
+            ->setPassword('password'); // указан в вашем почтовом менеджере на хостинге
+        $mailer = new Swift_Mailer($transport);
+
+        $message = (new Swift_Message('Сообщение с сайта Ассоциации')) // тема письма, задается произвольно
+            ->setFrom(['email' => 'Suomi Partnership Association']) // вставьте email, указанный в вашем почтовом менеджере на хостинге, имя задается произвольно
+            ->setTo(['email' => 'имя']); // email-адрес, куда вы хотите получать письма, и имя (произвольное, будет отображаться в графе "Кому")
+
+        $message_content = include_template('email.php', [
+            'message' => $contact['message'],
+            'send_name' => $contact['name'],
+            'email' => $contact['email']
+        ]);
+
+        $message->setBody($message_content, 'text/html');
+
+        try {
+            $result = $mailer->send($message);
+        } catch (Swift_TransportException $ex) {
+            print($ex->getMessage() . '<br>');
         }
-        $_SESSION['error'] = 'The form was not sent. Please contact us.';
-        header('Location: index#contact');
-        die();
+
+        if (!$result) {
+            $_SESSION['errors'] = 'The message was not sent. Please, try again or contact us via <a href="mailto:innovationfund@onu.edu.ua">email</a> or <a href="tel:+380995250511">phone</a>.';
+        } else {
+            $_SESSION['success'] = 'The message was sent successfully!';
+        }
+    } else {
+        $_SESSION['errors'] = 'Please, correct errors in the form.';
     }
-    $page_content = include_template('index.php', ['errors' => $errors, 'contact' => $contact]);
 }
 $page_content = include_template('index.php', ['errors' => $errors, 'contact' => $contact]);
 
-$layout_content = include_template ('layout.php', [
-  'title' => $page_title,
-  'desc' => $page_desc,
-  'menu' => $menu,
-  'navbar' => $page_navbar,
-  'content' => $page_content,
+$layout_content = include_template('layout.php', [
+    'title' => $page_title,
+    'desc' => $page_desc,
+    'menu' => $menu,
+    'navbar' => $page_navbar,
+    'content' => $page_content,
 ]);
 
 print($layout_content);

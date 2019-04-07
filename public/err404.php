@@ -1,13 +1,6 @@
 <?php
 
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
-
-require_once('../functions/functions.php');
-require_once ('../system/data.php');
-require_once('../system/config.php');
-
-session_start();
+require_once('../init.php');
 
 $con = get_connection($database_config);
 $news = get_news($con);

@@ -1,18 +1,9 @@
 <?php
 
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+require_once('../init.php');
 
-require_once('../functions/functions.php');
-require_once ('../system/data.php');
-require_once('../system/config.php');
-
-session_start();
-
-$con = get_connection($database_config);
 $news = get_news($con);
 $cats = get_news_cats($con);
-
 
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     $search = $_GET['search'] ?? '';

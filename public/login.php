@@ -1,19 +1,13 @@
 <?php
 
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+require_once('../init.php');
 
-require_once('../functions/functions.php');
-require_once ('../system/data.php');
-require_once('../system/config.php');
-
-session_start();
 if (isset($_SESSION['user'])) {
     header("Location: add-news.php");
     exit();
 };
 
-$con = get_connection($database_config);
+
 $form = [];
 $errors = [];
 

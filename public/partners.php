@@ -1,15 +1,7 @@
 <?php
 
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+require_once('../init.php');
 
-require_once('../functions/functions.php');
-require_once ('../system/data.php');
-require_once('../system/config.php');
-
-session_start();
-
-$con = get_connection($database_config);
 $partners = get_partners($con);
 
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {

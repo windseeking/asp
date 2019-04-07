@@ -1,0 +1,8 @@
+{
+    "name": "lenovo/asp",
+    "description": "Website of Suomi Partnership Association",
+    "type": "project",
+    "require": {
+        "swiftmailer/swiftmailer": "^5.4"
+    }
+}

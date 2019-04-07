@@ -1,13 +1,6 @@
 <?php
 
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
-
-require_once('../../functions/functions.php');
-require_once('../../system/data.php');
-require_once('../../system/config.php');
-
-session_start();
+require_once('../../init.php');
 
 if (!isset($_SESSION['user'])) {
     $_SESSION['errors'] = 'Log in to view this page.';
@@ -16,7 +9,6 @@ if (!isset($_SESSION['user'])) {
 }
 
 $user = $_SESSION['user'];
-$con = get_connection($database_config);
 $member = [];
 $errors = [];
 

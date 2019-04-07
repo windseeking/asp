@@ -491,7 +491,7 @@
                 <h2>Contact us</h2>
                 <div class="row justify-content-between">
                     <div class="col-12 col-lg-6 mb-3 mb-lg-0">
-                        <form method="post">
+                        <form method="post" action="index.php#contact">
                             <div class="form-group">
                                 <label for="name">Name <sup>*</sup></label>
                                 <?php $class = isset($errors['name']) ? 'is-invalid' : '';
