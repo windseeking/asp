@@ -158,8 +158,9 @@
 <!-- Plugin JavaScript -->
 <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
 
-<!-- Custom JavaScript for this theme -->
+<!-- Custom JavaScript for scrolling navigation -->
 <script src="../js/scrolling-nav.js"></script>
+
 <!--My script-->
 <script src="../js/script.js"></script>
 </body>
