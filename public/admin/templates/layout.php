@@ -81,6 +81,7 @@
           <i class="fas fa-user-tie"></i>
         </span>
                     Welcome, <b><?= $user['name']; ?></b>
+                  <a href="../logout.php" class="btn btn-outline-danger btn-sm ml-3">Log out</a>
                 </p>
 
                 <ul class="nav nav-tabs">

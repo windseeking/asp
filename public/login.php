@@ -46,7 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $_SESSION['user'] = $user;
                 if (isset($_SESSION['user'])) {
                     $user = $_SESSION['user'];
-                    header("Location: /add-news.php");
+                    header("Location: admin/add-news.php");
                 }
                 else {
                     $page_content = include_template('login.php', []);

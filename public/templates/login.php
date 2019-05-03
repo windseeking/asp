@@ -48,7 +48,7 @@
                 </div>
               <?php endif; ?>
 
-              <p class="text-right small"><a href="#" class="text-muted">Forgot a password</a></p>
+              <p class="text-right small"><a href="forgot-password.php" class="text-muted">Forgot a password</a></p>
             </div>
           </div>
           <button class="btn btn-success btn-block" type="submit">Sign in</button>
