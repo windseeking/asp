@@ -36,7 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                 $message = (new Swift_Message('Восстановление пароля'))
                     ->setFrom(['webmaster@innovationfund.in' => 'Suomi Partnership Association'])
-                    ->setTo(['windseeking2@gmail.com' => $user['name']]);
+                    ->setTo([$user['email'] => $user['name']]);
 
                 $message_content = include_template('reset-password-email.php', [
                     'code' => $code,
