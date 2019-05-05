@@ -6,6 +6,7 @@ $user = [];
 $errors = [];
 $code = [];
 $email = [];
+$result = [];
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $user = $_POST['user'];

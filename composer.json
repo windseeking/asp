@@ -1,7 +1,11 @@
 {
-    "name": "lenovo/asp",
-    "description": "Website of Suomi Partnership Association",
-    "type": "project",
+    "name": "acer/asp",
+    "authors": [
+        {
+            "name": "windseeking",
+            "email": "windseeking2@gmail.com"
+        }
+    ],
     "require": {
         "swiftmailer/swiftmailer": "^5.4",
         "php" : "^5.5 || ^7.0",

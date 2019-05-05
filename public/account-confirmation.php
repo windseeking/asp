@@ -6,17 +6,13 @@ $password = [];
 $code = [];
 
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-    $sql =
-        "SELECT id FROM users WHERE confirm_email_code = ? AND email = '?'";
-    $values = [
-        $code = intval($_GET['code']),
-        $email = mysqli_real_escape_string($con, $_GET['email'])
-    ];
-
-    if (!db_fetch_data($con, $sql, $values)) {
+    $code = intval($_GET['code']);
+    $email = mysqli_real_escape_string($con, $_GET['email']);
+    $sql = "SELECT id FROM users WHERE confirm_email_code = " . $code . " AND email = '" . $email . "'";
+    if (!mysqli_query($con, $sql)) {
         $errors['code'] = 'You entered a wrong code';
     } else {
-        $sql = "UPDATE users SET is_confirmed = 1 WHERE email = " . '$email';
+        $sql = "UPDATE users SET is_confirmed = 1 WHERE email = '" . $email . "'";
         if (mysqli_query($con, $sql)) {
             $_SESSION['success'] = 'Your account has been confirmed! Now you can <a href="login.php">log in</a>.';
         } else {

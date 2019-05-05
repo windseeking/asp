@@ -34,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     ->setPassword('pakoWorld6');
                 $mailer = new Swift_Mailer($transport);
 
-                $message = (new Swift_Message('Восстановление пароля'))
+                $message = (new Swift_Message('Reset password'))
                     ->setFrom(['webmaster@innovationfund.in' => 'Suomi Partnership Association'])
                     ->setTo([$user['email'] => $user['name']]);
 

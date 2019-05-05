@@ -16,7 +16,7 @@ $page_desc = 'Association «Suomi Partnership» (ASP) is a non-profit and
 non-governmental association of businesses aimed at fostering
 cooperation between Ukrainian and Finnish companies';
 $page_content = include_template('login.php', []);
-$page_navbar = include_template('navbar.php', [ 'navbar' => $login_navbar ]);
+$page_navbar = include_template('navbar.php', ['navbar' => $login_navbar]);
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $form = $_POST;
@@ -43,32 +43,34 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // если юзер с емайлом найден, проверяем пароль
         if ($user) { // если хэш совпал, то открываем сессию и передаем туда массив user
             if (password_verify($form['password'], $user['password'])) {
-                $_SESSION['user'] = $user;
-                if (isset($_SESSION['user'])) {
-                    $user = $_SESSION['user'];
-                    header("Location: admin/add-news.php");
-                }
-                else {
-                    $page_content = include_template('login.php', []);
+                if (!is_email_confirmed($con, $email)) { // если учетная запись не подтверждена
+                    $_SESSION['errors'] = 'Your account hasn\'t been confirmed. Please, check your email for the confirmation link.';
+                } else {
+                    $_SESSION['user'] = $user;
+                    if (isset($_SESSION['user'])) {
+                        $user = $_SESSION['user'];
+                        header("Location: admin/add-news.php");
+                    } else {
+                        $page_content = include_template('login.php', []);
+                    }
                 }
 
             } // если хэш не совпал, то грузим шаблон и отправляем ошибку
             else {
                 $errors['password'] = "Password is incorrect";
-                $page_content = include_template('login.php', ['form' => $form, 'errors' => $errors]);
             }
         } // если юзер не найден, то грузим шаблон и отправляем ошибку
         else {
             $errors['email'] = "User with this email wasn't found";
-            $page_content = include_template('login.php', ['form' => $form, 'errors' => $errors]);
         }
     }
 }
+$page_content = include_template('login.php', ['form' => $form, 'errors' => $errors]);
 
 $layout_content = include_template('layout.php', [
-  'content' => $page_content,
-  'title' => $page_title,
-  'menu' => $menu
+    'content' => $page_content,
+    'title' => $page_title,
+    'menu' => $menu
 ]);
 
 print($layout_content);
