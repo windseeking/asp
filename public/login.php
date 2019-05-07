@@ -44,7 +44,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if ($user) { // если хэш совпал, то открываем сессию и передаем туда массив user
             if (password_verify($form['password'], $user['password'])) {
                 if (!is_email_confirmed($con, $email)) { // если учетная запись не подтверждена
-                    $_SESSION['errors'] = 'Your account hasn\'t been confirmed. Please, check your email for the confirmation link.';
+                    $_SESSION['errors'] =
+                        'Your account hasn\'t been confirmed. Please, check your email for the confirmation link. 
+                        Don\'t forget to <b>check the spam</b> folder.<br>
+                        To receive new confirmation link, <a href="get-confirmation-link.php">click here</a>.';
                 } else {
                     $_SESSION['user'] = $user;
                     if (isset($_SESSION['user'])) {

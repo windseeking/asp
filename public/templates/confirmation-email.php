@@ -20,6 +20,8 @@
       border-radius: 0.25rem;
       transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 ">CONFIRM EMAIL</a></p>
+<p>If you haven't registered on the website of Suomi Partnership Association,
+    ignore this message and <b>don't send the confirmation link</b> to anyone.</p>
 <hr style="border: none; height: 1px; color: grey; background-color: grey"><br>
 <!--вставьте адрес сайта в href вместо #-->
 <small><a href="#" target="_blank">Suomi Partnership Association</a></small>

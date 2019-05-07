@@ -3,9 +3,22 @@
     <div class="row">
       <div class="col-12 col-md-6 mx-auto py-5">
         <h1>Create an account</h1>
-        <form method="post">
 
-          <?php $disabled = isset($_SESSION['warning']) ? 'disabled' : ''; ?>
+          <?php if (isset($_SESSION['warning'])): ?>
+              <div class="alert alert-warning mt-3" role="alert">
+                  <?= $_SESSION['warning']; ?>
+              </div>
+          <?php endif; ?>
+
+          <?php if (isset($_SESSION['errors'])): ?>
+              <div class="alert alert-danger mt-3" role="alert">
+                  <?= $_SESSION['errors'];
+                  unset($_SESSION['errors']); ?>
+              </div>
+          <?php endif; ?>
+
+        <form method="post">
+          <?php $disabled = isset($_SESSION['warning']) ? 'disabled': ''; unset($_SESSION['warning']); ?>
           <fieldset  <?= $disabled; ?>>
             <div class="form-row">
               <div class="form-group col-12 col-md-6">
@@ -86,20 +99,6 @@
               </div>
             </div>
             <button class="btn btn-success btn-block" type="submit">Sign up</button>
-
-              <?php if (isset($_SESSION['warning'])): ?>
-                <div class="alert alert-warning mt-3" role="alert">
-                    <?= $_SESSION['warning'];
-                    unset($_SESSION['warning']); ?>
-                </div>
-              <?php endif; ?>
-
-              <?php if (isset($_SESSION['errors'])): ?>
-                <div class="alert alert-danger mt-3" role="alert">
-                    <?= $_SESSION['errors'];
-                    unset($_SESSION['errors']); ?>
-                </div>
-              <?php endif; ?>
 
 
           </fieldset>

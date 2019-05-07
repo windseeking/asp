@@ -3,25 +3,25 @@
     <div class="row">
       <div class="col-12 col-md-4 mx-auto py-5">
 
-        <?php if (isset($_SESSION['errors'])): ?>
-        <div class="alert alert-danger" role="alert">
-          <?= $_SESSION['errors']; unset($_SESSION['errors']); ?>
-        </div>
-        <?php endif; ?>
-
-        <?php if (isset($_SESSION['success'])): ?>
-        <div class="alert alert-success" role="alert">
-            <?= $_SESSION['success']; unset($_SESSION['success']); ?>
-        </div>
-        <?php endif; ?>
-
-        <?php if (isset($_SESSION['logout'])): ?>
-        <div class="alert alert-info" role="alert">
-            <?= $_SESSION['logout']; unset($_SESSION['logout']); ?>
-        </div>
-        <?php endif; ?>
-
         <h1>Log in</h1>
+
+          <?php if (isset($_SESSION['errors'])): ?>
+              <div class="alert alert-danger" role="alert">
+                  <?= $_SESSION['errors']; unset($_SESSION['errors']); ?>
+              </div>
+          <?php endif; ?>
+
+          <?php if (isset($_SESSION['success'])): ?>
+              <div class="alert alert-success" role="alert">
+                  <?= $_SESSION['success']; unset($_SESSION['success']); ?>
+              </div>
+          <?php endif; ?>
+
+          <?php if (isset($_SESSION['logout'])): ?>
+              <div class="alert alert-info" role="alert">
+                  <?= $_SESSION['logout']; unset($_SESSION['logout']); ?>
+              </div>
+          <?php endif; ?>
 
         <form method="post">
           <div class="form-row">

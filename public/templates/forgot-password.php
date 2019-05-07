@@ -4,6 +4,19 @@
       <div class="col-12 col-md-4 mx-auto py-5">
         <h1>Forgot password</h1>
 
+          <?php if (isset($errors['email'])): ?>
+              <div class="invalid-feedback">
+                  <?= $errors['email']; ?>
+              </div>
+          <?php endif; ?>
+
+          <?php if (isset($_SESSION['success'])): ?>
+              <div class="alert alert-success mt-3 " role="alert">
+                  <?= $_SESSION['success'];
+                  unset($_SESSION['success']); ?>
+              </div>
+          <?php endif; ?>
+
         <form method="post">
           <?php $disabled = isset($_SESSION['success']) ? 'disabled' : ''; ?>
           <fieldset <?= $disabled; ?>>
@@ -13,19 +26,6 @@
                   <?php $class = isset($errors['email']) ? 'is-invalid' : '';
                   $value = isset($form['email']) ? $form['email'] : ''; ?>
                 <input type="email" name="email" class="form-control <?= $class; ?>" id="email" placeholder="Email">
-
-                  <?php if (isset($errors['email'])): ?>
-                    <div class="invalid-feedback">
-                        <?= $errors['email']; ?>
-                    </div>
-                  <?php endif; ?>
-
-                  <?php if (isset($_SESSION['success'])): ?>
-                    <div class="alert alert-success mt-3 " role="alert">
-                        <?= $_SESSION['success'];
-                        unset($_SESSION['success']); ?>
-                    </div>
-                  <?php endif; ?>
               </div>
             </div>
             <button class="btn btn-success btn-block" type="submit">Reset password</button>

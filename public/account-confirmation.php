@@ -4,19 +4,30 @@ require_once('../init.php');
 $errors = [];
 $password = [];
 $code = [];
+$email = [];
 
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-    $code = intval($_GET['code']);
     $email = mysqli_real_escape_string($con, $_GET['email']);
-    $sql = "SELECT id FROM users WHERE confirm_email_code = " . $code . " AND email = '" . $email . "'";
-    if (!mysqli_query($con, $sql)) {
-        $errors['code'] = 'You entered a wrong code';
+
+    $sql = "SELECT * FROM users WHERE is_confirmed = 1 AND email = '$email'";
+    if (mysqli_query($con, $sql)) {
+        $_SESSION['errors'] = 'Your account has already been confirmed.';
     } else {
-        $sql = "UPDATE users SET is_confirmed = 1 WHERE email = '" . $email . "'";
-        if (mysqli_query($con, $sql)) {
-            $_SESSION['success'] = 'Your account has been confirmed! Now you can <a href="login.php">log in</a>.';
+        $code = intval($_GET['code']);
+        $sql = "SELECT id FROM users WHERE confirm_email_code = " . $code . " AND email = '" . $email . "'";
+        if (!mysqli_query($con, $sql)) {
+            $errors['code'] = 'You entered a wrong code';
         } else {
-            $_SESSION['errors'] = 'Something went wrong. Please, try again later. Error: ' . mysqli_error($con);
+            $sql = "UPDATE users SET is_confirmed = 1 WHERE email = '" . $email . "'";
+            if (mysqli_query($con, $sql)) {
+                $_SESSION['success'] = 'Your account has been confirmed! Now you can <a href="login.php">log in</a>.';
+                $sql = "UPDATE users SET confirm_email_code = 0 WHERE email = '$email'";
+                if (!mysqli_query($con, $sql)) {
+                    print mysqli_error($con);
+                }
+            } else {
+                $_SESSION['errors'] = 'Something went wrong. Please, try again later. Error: ' . mysqli_error($con);
+            }
         }
     }
 }

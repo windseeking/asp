@@ -190,8 +190,9 @@ function is_email_confirmed(mysqli $con, string $email): bool
 {
     $email = mysqli_real_escape_string($con, $email);
     $sql =
-        "SELECT id FROM users WHERE is_confirmed = 1 AND email = '" . $email . "'";
-    $res = mysqli_query($con, $sql);
+        "SELECT id FROM users WHERE is_confirmed = 1 AND email = ?";
+    $values = [$email];
+    $res = db_fetch_data($con, $sql, $values);
     if ($res) {
         return true;
     }
@@ -200,6 +201,7 @@ function is_email_confirmed(mysqli $con, string $email): bool
 
 function is_email_exist($con, string $email): bool
 {
+    $email = mysqli_real_escape_string($con, $email);
     $sql =
         'SELECT id FROM users ' .
         'WHERE email = ?';

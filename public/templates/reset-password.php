@@ -5,6 +5,20 @@
 
         <h1>Reset password</h1>
 
+          <?php if (isset($_SESSION['errors'])): ?>
+              <div class="alert alert-danger" role="alert">
+                  <?= $_SESSION['errors'];
+                  unset($_SESSION['errors']); ?>
+              </div>
+          <?php endif; ?>
+
+          <?php if (isset($_SESSION['success'])): ?>
+              <div class="alert alert-success" role="alert">
+                  <?= $_SESSION['success'];
+                  unset($_SESSION['success']); ?>
+              </div>
+          <?php endif; ?>
+
         <form method="post">
           <?php $disabled = isset($_SESSION['success']) ? 'disabled' : ''; ?>
           <fieldset <?= $disabled; ?>>
@@ -55,19 +69,6 @@
 
               </div>
             </div>
-              <?php if (isset($_SESSION['errors'])): ?>
-                <div class="alert alert-danger" role="alert">
-                    <?= $_SESSION['errors'];
-                    unset($_SESSION['errors']); ?>
-                </div>
-              <?php endif; ?>
-
-              <?php if (isset($_SESSION['success'])): ?>
-                <div class="alert alert-success" role="alert">
-                    <?= $_SESSION['success'];
-                    unset($_SESSION['success']); ?>
-                </div>
-              <?php endif; ?>
 
             <button class="btn btn-success btn-block" type="submit">Set new password</button>
           </fieldset>
