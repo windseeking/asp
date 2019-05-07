@@ -132,7 +132,6 @@ function get_news($con): array
     return $news = mysqli_fetch_all($res, MYSQLI_ASSOC);
 }
 
-;
 
 function get_news_cats($con): array
 {
@@ -142,7 +141,6 @@ function get_news_cats($con): array
     return $cats = mysqli_fetch_all($res, MYSQLI_ASSOC);
 }
 
-;
 
 function get_partners($con): array
 {
@@ -152,7 +150,23 @@ function get_partners($con): array
     return $partners = mysqli_fetch_all($res, MYSQLI_ASSOC);
 }
 
-;
+/**
+ * Возвращает данные пользователя по его email-адресу
+ *
+ * @param mysqli $con Ресурс соединения
+ * @param string $email Email-адрес пользователя
+ * @return array Массив с данными пользователя | Пустой массив
+ */
+function get_user_by_email(mysqli $con, string $email): array
+{
+    $sql = "SELECT * FROM users WHERE email = '$email'";
+    $res = mysqli_query($con, $sql);
+    if ($res) {
+        return mysqli_fetch_all($res, MYSQLI_ASSOC);
+    }
+    return [];
+}
+
 
 // Шаблонизатор
 function include_template($name, $data)

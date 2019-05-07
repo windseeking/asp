@@ -12,13 +12,12 @@
 
           <?php if (isset($_SESSION['success'])): ?>
               <div class="alert alert-success mt-3 " role="alert">
-                  <?= $_SESSION['success'];
-                  unset($_SESSION['success']); ?>
+                  <?= $_SESSION['success']; ?>
               </div>
           <?php endif; ?>
 
         <form method="post">
-          <?php $disabled = isset($_SESSION['success']) ? 'disabled' : ''; ?>
+          <?php $disabled = isset($_SESSION['success']) ? 'disabled' : '';  unset($_SESSION['success']);?>
           <fieldset <?= $disabled; ?>>
             <div class="form-row">
               <div class="form-group col-12">

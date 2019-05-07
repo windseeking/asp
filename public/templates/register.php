@@ -103,7 +103,7 @@
 
           </fieldset>
         </form>
-        <p class="text-center mt-3"><a href="login.php">Already registered? Click here to log in</a></p>
+        <p class="text-center mt-3"><a href="login.php">Already registered? Click here to log in.</a></p>
       </div>
     </div>
   </div>
