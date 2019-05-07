@@ -169,7 +169,8 @@
             <?php $class = isset($errors['company_email']) ? 'is-invalid' : '';
             $value = isset($membership_request['company_email']) ? $membership_request['company_email'] : ''; ?>
           <label for="company_email">Email <sup>*</sup></label>
-          <input type="email" class="form-control <?= $class; ?>" id="company_email" name="membership_request[company_email]"
+          <input type="email" class="form-control <?= $class; ?>" id="company_email"
+                 name="membership_request[company_email]"
                  value="<?= filter_tags($value); ?>"
                  placeholder="For participation in general assemblies and communication with ASP">
             <?php if (isset($errors['company_email'])): ?>
@@ -235,17 +236,17 @@
 
       <button type="submit" class="btn btn-block btn-outline-primary">Submit</button>
         <?php if (isset($_SESSION['success'])): ?>
-            <div class="alert alert-success mt-3" role="alert">
-                <?= $_SESSION['success'];
-                unset($_SESSION['success']); ?>
-            </div>
+          <div class="alert alert-success mt-3" role="alert">
+              <?= $_SESSION['success'];
+              unset($_SESSION['success']); ?>
+          </div>
         <?php endif; ?>
 
         <?php if (isset($_SESSION['errors'])): ?>
-            <div class="alert alert-danger mt-3" role="alert">
-                <?= $_SESSION['errors'];
-                unset($_SESSION['errors']); ?>
-            </div>
+          <div class="alert alert-danger mt-3" role="alert">
+              <?= $_SESSION['errors'];
+              unset($_SESSION['errors']); ?>
+          </div>
         <?php endif; ?>
     </form>
   </div>

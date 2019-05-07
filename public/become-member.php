@@ -2,13 +2,6 @@
 
 require_once('../init.php');
 
-$page_title = 'Join us';
-$page_desc = 'Association «Suomi Partnership» (ASP) is a non-profit and 
-non-governmental association of businesses aimed at fostering
-cooperation between Ukrainian and Finnish companies';
-$membership_request = [];
-$errors = [];
-
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $membership_request = $_POST['membership_request'];
     $required = [
@@ -89,6 +82,11 @@ $page_content = include_template('become-member.php', [
     'errors' => $errors,
     'membership_request' => $membership_request
 ]);
+
+$page_title = 'Join us';
+$page_desc = 'Association «Suomi Partnership» (ASP) is a non-profit and 
+non-governmental association of businesses aimed at fostering
+cooperation between Ukrainian and Finnish companies';
 
 $layout_content = include_template('layout.php', [
     'title' => $page_title,

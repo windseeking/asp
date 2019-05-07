@@ -162,4 +162,3 @@ VALUES  (
         'finnish-ukrainian',
         ''
         );
-

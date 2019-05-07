@@ -1,9 +1,10 @@
 <section id="reliability">
   <div class="container px-3 px-md-5">
     <div class="row align-items-center justify-content-around">
-        <div class="col-12 col-md-6 order-2 order-md-1 mt-4 mt-md-0">
-          <p class="lead">We gather information about Ukrainian companies & verify their reliability for Finnish partners.</p>
-        </div>
+      <div class="col-12 col-md-6 order-2 order-md-1 mt-4 mt-md-0">
+        <p class="lead">We gather information about Ukrainian companies & verify their reliability for Finnish
+          partners.</p>
+      </div>
 
       <div class="col-12 col-md-6 order-1 order-md-2">
         <div class="card bg-light text-dark">
@@ -115,6 +116,6 @@
             <h2 class="card-title"><span class="bg-dark">Promotion</span></h2>
           </div>
         </div>
+      </div>
     </div>
-  </div>
 </section>

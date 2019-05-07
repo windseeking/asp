@@ -2,12 +2,6 @@
 
 require_once('../init.php');
 
-$form = [];
-$errors = [];
-$code = [];
-$email = [];
-$result = [];
-
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $form = $_POST;
 

@@ -6,53 +6,59 @@
         <h1>Log in</h1>
 
           <?php if (isset($_SESSION['errors'])): ?>
-              <div class="alert alert-danger" role="alert">
-                  <?= $_SESSION['errors']; unset($_SESSION['errors']); ?>
-              </div>
+            <div class="alert alert-danger" role="alert">
+                <?= $_SESSION['errors'];
+                unset($_SESSION['errors']); ?>
+            </div>
           <?php endif; ?>
 
           <?php if (isset($_SESSION['warning'])): ?>
             <div class="alert alert-warning mt-3" role="alert">
-                <?= $_SESSION['warning']; unset($_SESSION['warning']); ?>
+                <?= $_SESSION['warning'];
+                unset($_SESSION['warning']); ?>
             </div>
           <?php endif; ?>
 
           <?php if (isset($_SESSION['success'])): ?>
-              <div class="alert alert-success" role="alert">
-                  <?= $_SESSION['success']; unset($_SESSION['success']); ?>
-              </div>
+            <div class="alert alert-success" role="alert">
+                <?= $_SESSION['success'];
+                unset($_SESSION['success']); ?>
+            </div>
           <?php endif; ?>
 
           <?php if (isset($_SESSION['logout'])): ?>
-              <div class="alert alert-info" role="alert">
-                  <?= $_SESSION['logout']; unset($_SESSION['logout']); ?>
-              </div>
+            <div class="alert alert-info" role="alert">
+                <?= $_SESSION['logout'];
+                unset($_SESSION['logout']); ?>
+            </div>
           <?php endif; ?>
 
         <form method="post">
           <div class="form-row">
             <div class="form-group col-12">
               <label for="email">Email</label>
-              <?php $class = isset($errors['email']) ? 'is-invalid' : ''; $value = isset($form['email']) ? $form['email'] : ''; ?>
-              <input type="email" name="email" class="form-control <?=$class;?>" id="email" placeholder="Email">
+                <?php $class = isset($errors['email']) ? 'is-invalid' : '';
+                $value = isset($form['email']) ? $form['email'] : ''; ?>
+              <input type="email" name="email" class="form-control <?= $class; ?>" id="email" placeholder="Email">
 
-              <?php if(isset($errors['email'])): ?>
-                <div class="invalid-feedback">
-                    <?=$errors['email'];?>
-                </div>
-              <?php endif; ?>
+                <?php if (isset($errors['email'])): ?>
+                  <div class="invalid-feedback">
+                      <?= $errors['email']; ?>
+                  </div>
+                <?php endif; ?>
             </div>
 
             <div class="form-group col-12">
               <label for="password">Password</label>
-              <?php $class = isset($errors['password']) ? 'is-invalid' : ''; ?>
-              <input type="password" name="password" class="form-control <?=$class;?>" id="password" placeholder="Password">
+                <?php $class = isset($errors['password']) ? 'is-invalid' : ''; ?>
+              <input type="password" name="password" class="form-control <?= $class; ?>" id="password"
+                     placeholder="Password">
 
-              <?php if(isset($errors['password'])): ?>
-                <div class="invalid-feedback">
-                    <?=$errors['password'];?>
-                </div>
-              <?php endif; ?>
+                <?php if (isset($errors['password'])): ?>
+                  <div class="invalid-feedback">
+                      <?= $errors['password']; ?>
+                  </div>
+                <?php endif; ?>
 
               <p class="text-right small"><a href="forgot-password.php" class="text-muted">Forgot a password</a></p>
             </div>

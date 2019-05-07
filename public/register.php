@@ -2,12 +2,6 @@
 
 require_once('../init.php');
 
-$user = [];
-$errors = [];
-$code = [];
-$email = [];
-$result = [];
-
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $user = $_POST['user'];
     $required = ['email', 'password', 'name', 'lastname', 'username'];

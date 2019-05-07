@@ -1,8 +1,8 @@
 <h1>Password reset</h1>
-<p><b>Email:</b> <?= $reset_email ;?></p>
+<p><b>Email:</b> <?= $reset_email; ?></p>
 <p><b>Security code:</b></p>
 <p style="font-size: 24px"><?= $code; ?></p>
-<p><a href="asp/reset-password.php?email=<?= $reset_email ;?>"
+<p><a href="asp/reset-password.php?email=<?= $reset_email; ?>"
       style="color: #fff;
       background-color: #17a2b8;
       display: inlie-block;

@@ -1,6 +1,6 @@
 <div class="container-fluid p-3 px-md-5">
 
-    <?php require('bar.php');?>
+    <?php require('bar.php'); ?>
 
     <?php if ($partners): ?>
       <div class="row">

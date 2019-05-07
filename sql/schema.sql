@@ -14,6 +14,9 @@ CREATE TABLE IF NOT EXISTS `users`
   `password` char(64) NOT NULL,
   `lastname` char(64) NOT NULL,
   `username` char(64) NOT NULL UNIQUE KEY,
+  `is_confirmed` int DEFAULT 0,
+  `confirm_email_code` int DEFAULT NULL,
+  `reset_pass_code` int DEFAULT NULL,
   `is_admin` int DEFAULT 0,
   `created_at` timestamp default current_timestamp NOT NULL
 );

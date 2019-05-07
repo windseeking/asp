@@ -1,10 +1,6 @@
 <?php
 
 require_once('../init.php');
-$form = [];
-$errors = [];
-$password = [];
-$code = [];
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $form = $_POST['form'];
@@ -50,7 +46,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     if (empty($errors)) {
-        $sql = 'UPDATE users SET password = "' . password_hash($password, PASSWORD_DEFAULT) . '" WHERE reset_pass_code = ' . $code;
+        $sql = 'UPDATE users SET password = "' . password_hash($password,
+                PASSWORD_DEFAULT) . '" WHERE reset_pass_code = ' . $code;
         if (mysqli_query($con, $sql)) {
             $_SESSION['success'] = 'Password was changed successfully. Now you can <a href="login.php">log in</a>.';
         } else {

@@ -2,9 +2,6 @@
 
 require_once('../init.php');
 
-$errors = [];
-$contact = [];
-
 $page_title = 'Home';
 $page_desc = 'Association «Suomi Partnership» (ASP) is a non-profit and 
 non-governmental association of businesses aimed at fostering
@@ -30,14 +27,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     if (empty($errors)) {
-        $transport = (new Swift_SmtpTransport('host', port))  // сюда необходимо вставить данные (хост и порт) вашего сервера исходящей почты SMTP (информация должна находиться на сайте хостинга)
-            ->setUsername('username') // указан в вашем почтовом менеджере на хостинге (скорее всего это будет один из email-адресов)
-            ->setPassword('password'); // указан в вашем почтовом менеджере на хостинге
+        $transport = (new Swift_SmtpTransport('host',
+            port))// сюда необходимо вставить данные (хост и порт) вашего сервера исходящей почты SMTP (информация должна находиться на сайте хостинга)
+        ->setUsername('username')// указан в вашем почтовом менеджере на хостинге (скорее всего это будет один из email-адресов)
+        ->setPassword('password'); // указан в вашем почтовом менеджере на хостинге
         $mailer = new Swift_Mailer($transport);
 
-        $message = (new Swift_Message('Сообщение с сайта Ассоциации')) // тема письма, задается произвольно
-            ->setFrom(['email' => 'Suomi Partnership Association']) // вставьте email, указанный в вашем почтовом менеджере на хостинге, имя задается произвольно
-            ->setTo(['email' => 'имя']); // email-адрес, куда вы хотите получать письма, и имя (произвольное, будет отображаться в графе "Кому")
+        $message = (new Swift_Message('Сообщение с сайта Ассоциации'))// тема письма, задается произвольно
+        ->setFrom(['email' => 'Suomi Partnership Association'])// вставьте email, указанный в вашем почтовом менеджере на хостинге, имя задается произвольно
+        ->setTo(['email' => 'имя']); // email-адрес, куда вы хотите получать письма, и имя (произвольное, будет отображаться в графе "Кому")
 
         $message_content = include_template('contact-email.php', [
             'message' => filter_tags($contact['message']),
@@ -64,7 +62,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 $page_content = include_template('index.php', [
     'errors' => $errors,
-    'contact' => $contact]);
+    'contact' => $contact
+]);
 
 $layout_content = include_template('layout.php', [
     'title' => $page_title,

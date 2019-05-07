@@ -520,7 +520,7 @@
                 <li>voluntary at their own discretion;</li>
                 <li>by the resolution of the General Assembly.</li>
               </ol>
-              
+
               <h5>6.4</h5>
               <p>The executive director of the Association</p>
               <h6>6.4.1</h6>
@@ -566,7 +566,7 @@
               <p>reports to the Board.</p>
 
               <!--        7        -->
-              
+
               <h4 id="item-a-7">7. THE AUDIT COMMITTEE OF THE ASSOCIATION</h4>
 
               <h5>7.1</h5>
@@ -593,7 +593,7 @@
                 simultaneously.</p>
 
               <!--        8        -->
-              
+
               <h4 id="item-a-8">8. ACCOUNTING AND REPORTING IN THE ASSOCIATION</h4>
 
               <h5>8.1</h5>
@@ -612,7 +612,7 @@
                 control business entities.</p>
 
               <!--        9        -->
-              
+
               <h4 id="item-a-9">9. TERMINATION OF THE ASSOCIATION</h4>
 
               <h5>9.1</h5>
@@ -834,86 +834,86 @@
 <section id="other" class="py-2">
   <div class="container-fluid p-3 px-md-5" style="position: relative">
     <h1 class="mb-4">Other documents</h1>
-      <div class="card-columns">
-        <div class="card">
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item">
+    <div class="card-columns">
+      <div class="card">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
               <span style="font-size: 1em; color: Dodgerblue;">
                   <i class="far fa-file-pdf"></i>
                 </span>
-              <a href="/uploads/presentation.ppsx" target="_blank">Presentation of the Association</a>
-            </li>
-          </ul>
-        </div>
+            <a href="/uploads/presentation.ppsx" target="_blank">Presentation of the Association</a>
+          </li>
+        </ul>
+      </div>
 
-        <div class="card">
-          <div class="card-header">
-            Resolutions of the General Assembly 2013
-          </div>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item">
+      <div class="card">
+        <div class="card-header">
+          Resolutions of the General Assembly 2013
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
                 <span style="font-size: 1em; color: Dodgerblue;">
                   <i class="far fa-file-pdf"></i>
                 </span>
-              <a href="/uploads/rishenya1.pdf" target="_blank">Minutes N 1 of the General Assembly of Association Suomi
-                Partnership (regarding
-                establishment of a court of arbitration)</a>
-            </li>
-            <li class="list-group-item">
+            <a href="/uploads/rishenya1.pdf" target="_blank">Minutes N 1 of the General Assembly of Association Suomi
+              Partnership (regarding
+              establishment of a court of arbitration)</a>
+          </li>
+          <li class="list-group-item">
                 <span style="font-size: 1em; color: Dodgerblue;">
                   <i class="far fa-file-pdf"></i>
                 </span>
-              <a href="/uploads/rishenya2.pdf" target="_blank">Minutes N 2 of the General Assembly of Association Suomi
-                Partnership (regarding
-                new members)</a>
-            </li>
-          </ul>
-        </div>
+            <a href="/uploads/rishenya2.pdf" target="_blank">Minutes N 2 of the General Assembly of Association Suomi
+              Partnership (regarding
+              new members)</a>
+          </li>
+        </ul>
+      </div>
 
-        <div class="card">
-          <div class="card-header">
-            Board’s resolutions 2012
-          </div>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item">
+      <div class="card">
+        <div class="card-header">
+          Board’s resolutions 2012
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
                <span style="font-size: 1em; color: Dodgerblue;">
                   <i class="far fa-file-word"></i>
                 </span>
-              <a href="/uploads/minutes2.doc" target="_blank">Minutes N2 of the Board’s meeting of Association Suomi
-                Partnership</a></li>
-            <li class="list-group-item">
+            <a href="/uploads/minutes2.doc" target="_blank">Minutes N2 of the Board’s meeting of Association Suomi
+              Partnership</a></li>
+          <li class="list-group-item">
                 <span style="font-size: 1em; color: Dodgerblue;">
                   <i class="far fa-file-word"></i>
                 </span>
-              <a href="/uploads/minutes3.doc" target="_blank">Minutes N3 of the Board’s meeting of Association Suomi
-                Partnership</a></li>
-            <li class="list-group-item">
+            <a href="/uploads/minutes3.doc" target="_blank">Minutes N3 of the Board’s meeting of Association Suomi
+              Partnership</a></li>
+          <li class="list-group-item">
                 <span style="font-size: 1em; color: Dodgerblue;">
                   <i class="far fa-file-word"></i>
                 </span>
-              <a href="/uploads/membership-fees.doc" target="_blank">Membership fees regulation of Association Suomi
-                Partnership</a></li>
-          </ul>
-        </div>
+            <a href="/uploads/membership-fees.doc" target="_blank">Membership fees regulation of Association Suomi
+              Partnership</a></li>
+        </ul>
+      </div>
 
-        <div class="card">
-          <div class="card-header">
-            Board’s resolutions 2013
-          </div>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item">
-                <span style="font-size: 1em; color: Dodgerblue;">
-                  <i class="far fa-file-word"></i>
-                </span>
-              <a href="/uploads/Protokol4.doc" target="_blank">Minutes N4 of the Board’s meeting of Association Suomi
-                Partnership</a></li>
-            <li class="list-group-item">
-                <span style="font-size: 1em; color: Dodgerblue;">
-                  <i class="far fa-file-word"></i>
-                </span>
-              <a href="/uploads/Protokol5.doc" target="_blank">Minutes N5 of the Board’s meeting of Association Suomi
-                Partnership</a></li>
-          </ul>
+      <div class="card">
+        <div class="card-header">
+          Board’s resolutions 2013
         </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+                <span style="font-size: 1em; color: Dodgerblue;">
+                  <i class="far fa-file-word"></i>
+                </span>
+            <a href="/uploads/Protokol4.doc" target="_blank">Minutes N4 of the Board’s meeting of Association Suomi
+              Partnership</a></li>
+          <li class="list-group-item">
+                <span style="font-size: 1em; color: Dodgerblue;">
+                  <i class="far fa-file-word"></i>
+                </span>
+            <a href="/uploads/Protokol5.doc" target="_blank">Minutes N5 of the Board’s meeting of Association Suomi
+              Partnership</a></li>
+        </ul>
+      </div>
     </div>
 </section>

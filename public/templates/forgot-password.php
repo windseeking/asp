@@ -5,19 +5,20 @@
         <h1>Forgot password</h1>
 
           <?php if (isset($errors['email'])): ?>
-              <div class="invalid-feedback">
-                  <?= $errors['email']; ?>
-              </div>
+            <div class="invalid-feedback">
+                <?= $errors['email']; ?>
+            </div>
           <?php endif; ?>
 
           <?php if (isset($_SESSION['success'])): ?>
-              <div class="alert alert-success mt-3 " role="alert">
-                  <?= $_SESSION['success']; ?>
-              </div>
+            <div class="alert alert-success mt-3 " role="alert">
+                <?= $_SESSION['success']; ?>
+            </div>
           <?php endif; ?>
 
         <form method="post">
-          <?php $disabled = isset($_SESSION['success']) ? 'disabled' : '';  unset($_SESSION['success']);?>
+            <?php $disabled = isset($_SESSION['success']) ? 'disabled' : '';
+            unset($_SESSION['success']); ?>
           <fieldset <?= $disabled; ?>>
             <div class="form-row">
               <div class="form-group col-12">

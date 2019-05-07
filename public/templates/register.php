@@ -5,21 +5,22 @@
         <h1>Create an account</h1>
 
           <?php if (isset($_SESSION['warning'])): ?>
-              <div class="alert alert-warning mt-3" role="alert">
-                  <?= $_SESSION['warning']; ?>
-              </div>
+            <div class="alert alert-warning mt-3" role="alert">
+                <?= $_SESSION['warning']; ?>
+            </div>
           <?php endif; ?>
 
           <?php if (isset($_SESSION['errors'])): ?>
-              <div class="alert alert-danger mt-3" role="alert">
-                  <?= $_SESSION['errors'];
-                  unset($_SESSION['errors']); ?>
-              </div>
+            <div class="alert alert-danger mt-3" role="alert">
+                <?= $_SESSION['errors'];
+                unset($_SESSION['errors']); ?>
+            </div>
           <?php endif; ?>
 
         <form method="post">
-          <?php $disabled = isset($_SESSION['warning']) ? 'disabled': ''; unset($_SESSION['warning']); ?>
-          <fieldset  <?= $disabled; ?>>
+            <?php $disabled = isset($_SESSION['warning']) ? 'disabled' : '';
+            unset($_SESSION['warning']); ?>
+          <fieldset <?= $disabled; ?>>
             <div class="form-row">
               <div class="form-group col-12 col-md-6">
                 <label for="email">Email</label>
